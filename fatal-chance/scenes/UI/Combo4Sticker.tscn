@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://2psqm7rrnjao"]
+
+[ext_resource type="Texture2D" uid="uid://b2w7822j1r5dh" path="res://assets/MainFightUI/c4.png" id="1_l1gva"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="C4" type="Sprite2D" parent="."]
+scale = Vector2(0.40061486, 0.40001154)
+texture = ExtResource("1_l1gva")

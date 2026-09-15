@@ -1,0 +1,1046 @@
+[gd_scene load_steps=64 format=3 uid="uid://dsfsrj37fvq64"]
+
+[ext_resource type="Script" uid="uid://c4e77oafhlf5b" path="res://scripts/Ruixian/character_selection_scene.gd" id="1_wt60j"]
+[ext_resource type="Texture2D" uid="uid://clttxo03c4cpt" path="res://assets/Ruixian/Sword/111.PNG" id="2_je7bj"]
+[ext_resource type="Texture2D" uid="uid://d27hk7ulnoxjw" path="res://assets/Ruixian/CharacterSelectionBakground.JPG" id="2_l005r"]
+[ext_resource type="Texture2D" uid="uid://b24e888kqsgnw" path="res://assets/Ruixian/Sword/222.PNG" id="3_l005r"]
+[ext_resource type="Texture2D" uid="uid://c5fpnqno5h74i" path="res://assets/Ruixian/Sword/333.PNG" id="4_du8ie"]
+[ext_resource type="Texture2D" uid="uid://bwy52v2lsx4jg" path="res://assets/Ruixian/Sword/444.PNG" id="5_8kr26"]
+[ext_resource type="Texture2D" uid="uid://dll8y5u7w1hv4" path="res://assets/Ruixian/Sword/555.PNG" id="6_snxld"]
+[ext_resource type="Texture2D" uid="uid://betgj17g4gd10" path="res://assets/Ruixian/Sword/666.PNG" id="7_tkmpo"]
+[ext_resource type="Texture2D" uid="uid://d12042pblpddm" path="res://assets/Ruixian/Sword/777.PNG" id="8_nwceq"]
+[ext_resource type="Texture2D" uid="uid://b1bt7bxfyce8g" path="res://assets/Ruixian/Sword/888.PNG" id="9_bwebs"]
+[ext_resource type="Texture2D" uid="uid://doyaddwljxbvp" path="res://assets/Ruixian/Sword/999.PNG" id="10_dmo87"]
+[ext_resource type="Texture2D" uid="uid://b2t7b6lvuuko5" path="res://assets/Ruixian/Sword/10.PNG" id="11_rxtwp"]
+[ext_resource type="Texture2D" uid="uid://bmt0fm7ilmdc3" path="res://assets/Ruixian/Sword/11.PNG" id="12_rudf8"]
+[ext_resource type="Texture2D" uid="uid://da242oedl1the" path="res://assets/Ruixian/Sword/12.PNG" id="13_t4jqw"]
+[ext_resource type="Texture2D" uid="uid://d07y317u1yb1t" path="res://assets/Ruixian/Sword/13.PNG" id="14_jr2ih"]
+[ext_resource type="FontFile" uid="uid://y83j78supfek" path="res://assets/Ruixian/RussoOne-Regular.ttf" id="16_dmo87"]
+[ext_resource type="Texture2D" uid="uid://bb1b7odsia7pb" path="res://assets/AnathemaSprites/anathema_select.png" id="16_igmqm"]
+[ext_resource type="Texture2D" uid="uid://ied73mcc3kr1" path="res://assets/AnathemaSprites/anathema_splash.png" id="16_l005r"]
+[ext_resource type="Texture2D" uid="uid://csjmocf6g6rnu" path="res://assets/TalismanSpirtes/talisman_select.png" id="17_jh1sq"]
+[ext_resource type="Texture2D" uid="uid://c3cpbdqjyei0a" path="res://assets/SplashUI/SplashBackgroundBlank.png" id="19_igmqm"]
+[ext_resource type="Texture2D" uid="uid://c2julvukqssm1" path="res://assets/AnathemaSprites/anathema_spraytag.png" id="20_yulex"]
+[ext_resource type="Texture2D" uid="uid://bnv0eh18pi76n" path="res://assets/TalismanSpirtes/TalismanSplashArt.png" id="21_4uybn"]
+[ext_resource type="Texture2D" uid="uid://dv85nxmogasl2" path="res://assets/Ruixian/Playerleft.PNG" id="21_nwceq"]
+[ext_resource type="Texture2D" uid="uid://cilp0hq31p2vo" path="res://assets/Ruixian/Selectright.PNG" id="22_bwebs"]
+[ext_resource type="AudioStream" uid="uid://bpk7uhs1umygk" path="res://music_sfx/buttons_and_clicks/click.mp3" id="25_rxtwp"]
+[ext_resource type="AudioStream" uid="uid://c2fh5tqp1ebib" path="res://music_sfx/audio_clips/ANATHEMA trim.mp3" id="26_6lklq"]
+[ext_resource type="AudioStream" uid="uid://bk60t4rkq6om4" path="res://music_sfx/audio_clips/TALISMAN trim.mp3" id="27_mrv4h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8bnbh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l005r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_du8ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8kr26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_snxld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tkmpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nwceq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bwebs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dmo87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rxtwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_rudf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_t4jqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jr2ih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_je7bj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="Animation" id="Animation_7m7nb"]
+resource_name = "Drop"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.2, 0.33333334, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(640, -600), Vector2(640, 186.79999), Vector2(640, 481.87012), Vector2(640, 506.00098), Vector2(640, 524)]
+}
+
+[sub_resource type="Animation" id="Animation_yraky"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sword:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, -600)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tcaeo"]
+_data = {
+&"Drop": SubResource("Animation_7m7nb"),
+&"RESET": SubResource("Animation_yraky")
+}
+
+[sub_resource type="Gradient" id="Gradient_l005r"]
+offsets = PackedFloat32Array(0, 0.36970684, 0.509772, 0.64820844, 1)
+colors = PackedColorArray(0.6039216, 0.5019608, 0.9764706, 0.43137255, 0.7254902, 0.5568628, 0.81960785, 1, 0.85718393, 0.6175534, 0.6501356, 1, 0.8039216, 0.84705883, 0.85882354, 1, 0.76862746, 1, 1, 0.3764706)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_du8ie"]
+gradient = SubResource("Gradient_l005r")
+width = 3
+height = 25
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_8kr26"]
+colors = PackedColorArray(1, 1, 1, 0.20784314, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_du8ie"]
+gradient = SubResource("Gradient_8kr26")
+
+[sub_resource type="Gradient" id="Gradient_tkmpo"]
+offsets = PackedFloat32Array(0, 0.50934577, 1)
+colors = PackedColorArray(1, 1, 1, 0.03529412, 1, 1, 1, 1, 1, 1, 1, 0.08627451)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8kr26"]
+gradient = SubResource("Gradient_tkmpo")
+
+[sub_resource type="Curve" id="Curve_bwebs"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.08732876, 49.654312), 0.0, 0.0, 0, 0, Vector2(0.1609589, 3.8969269), 0.0, 0.0, 0, 0, Vector2(0.23972604, 48.02011), 0.0, 0.0, 0, 0, Vector2(0.31164384, 7.1652985), 0.0, 0.0, 0, 0, Vector2(0.37671232, 49.654312), 0.0, 0.0, 0, 0, Vector2(0.47431508, 7.1652985), 0.0, 0.0, 0, 0, Vector2(0.5582192, 56.19107), 0.0, 0.0, 0, 0, Vector2(0.65753424, -1.005661), 0.0, 0.0, 0, 0, Vector2(0.7363014, 51.288498), 0.0, 0.0, 0, 0, Vector2(0.82876706, -1.005661), 0.0, 0.0, 0, 0, Vector2(0.91438353, 49.654312), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 13
+
+[sub_resource type="CurveTexture" id="CurveTexture_snxld"]
+curve = SubResource("Curve_bwebs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rxtwp"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 500, 1)
+gravity = Vector3(100, 20, 0)
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 5.9999976
+tangential_accel_curve = SubResource("CurveTexture_snxld")
+damping_max = 100.00001
+scale_min = 1.5
+scale_max = 1.8
+color_ramp = SubResource("GradientTexture1D_8kr26")
+color_initial_ramp = SubResource("GradientTexture1D_du8ie")
+
+[sub_resource type="Animation" id="Animation_igmqm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP1/AnathemaSplash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SplashBackgroundBlankP1/AnathemaSplash:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.555, 0.555)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SplashBackgroundBlankP2/AnathemaSplash:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SplashBackgroundBlankP2/AnathemaSplash:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.555, 0.555)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SplashBackgroundBlankP1/AnathemaSpraytag:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SplashBackgroundBlankP2/AnathemaSpraytag:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SplashBackgroundBlankP1/TalismanSplashArt:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SplashBackgroundBlankP2/TalismanSplashArt2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SplashBackgroundBlankP1/TalismanSplashArt:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.548, 0.548)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SplashBackgroundBlankP2/TalismanSplashArt2:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.548, 0.548)]
+}
+
+[sub_resource type="Animation" id="Animation_rwubx"]
+resource_name = "anathema_flicker"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP1/AnathemaSplash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yulex"]
+resource_name = "anathema1_select"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP1/AnathemaSplash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SplashBackgroundBlankP1/AnathemaSplash:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.555, 0.555), Vector2(0.695, 0.695), Vector2(0.555, 0.555)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SplashBackgroundBlankP1/AnathemaSpraytag:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mrv4h"]
+resource_name = "anathema1_selected"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP1/AnathemaSplash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SplashBackgroundBlankP1/AnathemaSpraytag:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4uybn"]
+resource_name = "anathema2_flicker"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP2/AnathemaSplash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_47btm"]
+resource_name = "anathema2_select"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP2/AnathemaSplash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SplashBackgroundBlankP2/AnathemaSplash:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.555, 0.555), Vector2(0.695, 0.695), Vector2(0.555, 0.555)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SplashBackgroundBlankP2/AnathemaSpraytag:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rmrfr"]
+resource_name = "anathema2_selected"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP2/AnathemaSplash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SplashBackgroundBlankP2/AnathemaSpraytag:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lprei"]
+resource_name = "p1_default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP1/AnathemaSplash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SplashBackgroundBlankP1/AnathemaSpraytag:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SplashBackgroundBlankP1/TalismanSplashArt:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7cd2y"]
+resource_name = "p2_default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP2/AnathemaSplash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SplashBackgroundBlankP2/AnathemaSpraytag:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SplashBackgroundBlankP2/TalismanSplashArt2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jh1sq"]
+resource_name = "talisman1_flicker"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP1/TalismanSplashArt:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_goi52"]
+resource_name = "talisman1_select"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP1/TalismanSplashArt:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SplashBackgroundBlankP1/TalismanSplashArt:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5480898, 0.5480898), Vector2(0.688, 0.688), Vector2(0.548, 0.548)]
+}
+
+[sub_resource type="Animation" id="Animation_6lklq"]
+resource_name = "talisman1_selected"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP1/TalismanSplashArt:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_87r1y"]
+resource_name = "talisman2_flicker"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP2/TalismanSplashArt2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_per6m"]
+resource_name = "talisman2_select"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP2/TalismanSplashArt2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SplashBackgroundBlankP2/TalismanSplashArt2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.548, 0.548), Vector2(0.688, 0.688), Vector2(0.548, 0.548)]
+}
+
+[sub_resource type="Animation" id="Animation_qakvt"]
+resource_name = "talisman2_selected"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SplashBackgroundBlankP2/TalismanSplashArt2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yulex"]
+_data = {
+&"RESET": SubResource("Animation_igmqm"),
+&"anathema1_flicker": SubResource("Animation_rwubx"),
+&"anathema1_select": SubResource("Animation_yulex"),
+&"anathema1_selected": SubResource("Animation_mrv4h"),
+&"anathema2_flicker": SubResource("Animation_4uybn"),
+&"anathema2_select": SubResource("Animation_47btm"),
+&"anathema2_selected": SubResource("Animation_rmrfr"),
+&"p1_default": SubResource("Animation_lprei"),
+&"p2_default": SubResource("Animation_7cd2y"),
+&"talisman1_flicker": SubResource("Animation_jh1sq"),
+&"talisman1_select": SubResource("Animation_goi52"),
+&"talisman1_selected": SubResource("Animation_6lklq"),
+&"talisman2_flicker": SubResource("Animation_87r1y"),
+&"talisman2_select": SubResource("Animation_per6m"),
+&"talisman2_selected": SubResource("Animation_qakvt")
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_47btm"]
+load_path = "res://.godot/imported/SplashBackgroundBlank.png-fcc138ab49e810676fc807e289d156ec.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yulex"]
+load_path = "res://.godot/imported/anathema_spraytag.png-b51dcf7fd8a2c1161a4ff5a76b835ccf.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_87r1y"]
+load_path = "res://.godot/imported/TalismanSplashArt.png-5fbc6dc3a0fed491562f0e8eb326723b.ctex"
+
+[sub_resource type="Animation" id="Animation_rxtwp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Playerleft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-152, 120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Selectright:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1461, 120)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Selectright:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Playerleft:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.55, 0.55)]
+}
+
+[sub_resource type="Animation" id="Animation_dmo87"]
+resource_name = "Slide In"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Playerleft:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-152, 120), Vector2(470, 120), Vector2(517, 120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Selectright:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1461, 120), Vector2(827, 120), Vector2(745, 120)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Selectright:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_nwceq"]
+resource_name = "pop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Selectright:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(745, 120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Playerleft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(517, 120)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Selectright:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.55, 0.55), Vector2(0.5, 0.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Playerleft:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.20003895, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.55, 0.55), Vector2(0.5, 0.5), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rudf8"]
+_data = {
+&"RESET": SubResource("Animation_rxtwp"),
+&"Slide In": SubResource("Animation_dmo87"),
+&"pop": SubResource("Animation_nwceq")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_wt60j")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 512)
+texture = ExtResource("2_l005r")
+
+[node name="Sword" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, -600)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_8bnbh")
+autoplay = "default"
+frame = 20
+frame_progress = 0.2792653
+speed_scale = 0.6
+
+[node name="P1Label" type="Label" parent="."]
+offset_left = 98.0
+offset_top = 387.0
+offset_right = 138.0
+offset_bottom = 420.0
+theme_override_fonts/font = ExtResource("16_dmo87")
+theme_override_font_sizes/font_size = 26
+
+[node name="P2Label" type="Label" parent="."]
+offset_left = 1006.0
+offset_top = 387.0
+offset_right = 1046.0
+offset_bottom = 423.0
+theme_override_fonts/font = ExtResource("16_dmo87")
+theme_override_font_sizes/font_size = 26
+
+[node name="PlayerIndicator" type="Label" parent="."]
+offset_left = 411.0
+offset_top = 339.0
+offset_right = 451.0
+offset_bottom = 362.0
+
+[node name="LockedIndicator1" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="LockedIndicator2" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CharacterGrid" type="HBoxContainer" parent="."]
+offset_left = 429.0
+offset_top = 400.0
+offset_right = 849.0
+offset_bottom = 600.0
+theme_override_constants/separation = 20
+
+[node name="CharacterCard1" type="TextureButton" parent="CharacterGrid"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("16_igmqm")
+ignore_texture_size = true
+stretch_mode = 6
+flip_h = true
+
+[node name="Border" type="Panel" parent="CharacterGrid/CharacterCard1"]
+modulate = Color(0.99607843, 1, 0.9411765, 1)
+top_level = true
+layout_mode = 0
+offset_left = 429.0
+offset_top = 400.0
+offset_right = 629.0
+offset_bottom = 600.0
+mouse_filter = 2
+
+[node name="CharacterCard2" type="TextureButton" parent="CharacterGrid"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture_normal = ExtResource("17_jh1sq")
+ignore_texture_size = true
+stretch_mode = 6
+flip_h = true
+
+[node name="Border" type="Panel" parent="CharacterGrid/CharacterCard2"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+mouse_filter = 2
+
+[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tcaeo")
+}
+autoplay = "Drop"
+speed_scale = 0.6
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(130, 512)
+amount = 25
+texture = SubResource("GradientTexture2D_du8ie")
+lifetime = 5.0
+preprocess = 2.0
+speed_scale = 1.79
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_rxtwp")
+
+[node name="P1Marker" type="Marker2D" parent="."]
+position = Vector2(190, 600)
+
+[node name="P2Marker" type="Marker2D" parent="."]
+position = Vector2(1060, 600)
+
+[node name="SplashAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yulex")
+}
+
+[node name="SplashBackgroundBlankP1" type="Sprite2D" parent="."]
+position = Vector2(255.00003, 898)
+scale = Vector2(0.6847538, 0.6847538)
+texture = ExtResource("19_igmqm")
+
+[node name="AnathemaSplash" type="Sprite2D" parent="SplashBackgroundBlankP1"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(13.143372, -39.43025)
+scale = Vector2(0.555, 0.555)
+texture = ExtResource("16_l005r")
+
+[node name="AnathemaSpraytag" type="Sprite2D" parent="SplashBackgroundBlankP1"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(92.00391, -87.622795)
+rotation = -0.27516732
+scale = Vector2(0.482089, 0.482089)
+texture = ExtResource("20_yulex")
+
+[node name="TalismanSplashArt" type="Sprite2D" parent="SplashBackgroundBlankP1"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(148.95862, -93.464355)
+scale = Vector2(0.548, 0.548)
+texture = ExtResource("21_4uybn")
+
+[node name="SplashBackgroundBlankP2" type="Sprite2D" parent="."]
+position = Vector2(1024, 898)
+scale = Vector2(0.685, 0.685)
+texture = SubResource("CompressedTexture2D_47btm")
+flip_h = true
+
+[node name="AnathemaSplash" type="Sprite2D" parent="SplashBackgroundBlankP2"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(13.143372, -39.43025)
+scale = Vector2(0.555, 0.555)
+texture = ExtResource("16_l005r")
+flip_h = true
+
+[node name="AnathemaSpraytag" type="Sprite2D" parent="SplashBackgroundBlankP2"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(360.58398, 20.437984)
+rotation = 0.27576202
+scale = Vector2(0.482, 0.482)
+texture = SubResource("CompressedTexture2D_yulex")
+
+[node name="TalismanSplashArt2" type="Sprite2D" parent="SplashBackgroundBlankP2"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-145.98535, -93.430664)
+scale = Vector2(0.548, 0.548)
+texture = SubResource("CompressedTexture2D_87r1y")
+flip_h = true
+
+[node name="Playerleft" type="Sprite2D" parent="."]
+position = Vector2(-152, 120)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("21_nwceq")
+
+[node name="Selectright" type="Sprite2D" parent="."]
+position = Vector2(1461, 120)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("22_bwebs")
+
+[node name="TextSlideInAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rudf8")
+}
+autoplay = "Slide In"
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_rxtwp")
+
+[node name="Anathema" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_6lklq")
+bus = &"FATAL_CHANCE"
+
+[node name="Talisman" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_mrv4h")
+bus = &"FATAL_CHANCE"

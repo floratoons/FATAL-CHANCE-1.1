@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://t17qysfbjp2r"]
+
+[ext_resource type="Texture2D" uid="uid://bpn8nc81xpkjr" path="res://assets/MainFightUI/c2.png" id="1_gh6ga"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.381, 0.381)
+texture = ExtResource("1_gh6ga")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmet1w3w3gmwh"]
+
+[ext_resource type="Script" uid="uid://bb5h2kl63o1k4" path="res://scripts/music_manager.gd" id="1_jd6i5"]
+[ext_resource type="AudioStream" uid="uid://dx3otlhnmt4cx" path="res://music_sfx/PHEAP_midterm_dev.mp3" id="2_yodp2"]
+
+[node name="MusicManager" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_jd6i5")
+
+[node name="BGMUSIC" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_yodp2")
+pitch_scale = 2.0
+parameters/looping = true

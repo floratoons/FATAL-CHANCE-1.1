@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ffwpikc46yx"]
+
+[ext_resource type="AudioStream" uid="uid://bodpdv01crfjb" path="res://music_sfx/buttons_and_clicks/glitch.mp3" id="1_hfhlg"]
+
+[node name="BGMPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_hfhlg")
+autoplay = true
+parameters/looping = true

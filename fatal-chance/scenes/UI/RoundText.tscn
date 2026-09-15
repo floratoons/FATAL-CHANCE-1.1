@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://38qc3jjv2iur"]
+
+[node name="RoundText" type="Label"]
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1

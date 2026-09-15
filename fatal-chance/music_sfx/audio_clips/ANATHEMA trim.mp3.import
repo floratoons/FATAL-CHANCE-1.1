@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2fh5tqp1ebib"
+path="res://.godot/imported/ANATHEMA trim.mp3-98b5b1394f95236eeee71fe1d820bc51.mp3str"
+
+[deps]
+
+source_file="res://music_sfx/audio_clips/ANATHEMA trim.mp3"
+dest_files=["res://.godot/imported/ANATHEMA trim.mp3-98b5b1394f95236eeee71fe1d820bc51.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

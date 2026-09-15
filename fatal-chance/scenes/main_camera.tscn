@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxcn8fb8r0fg8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajjnd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jk0"]
+
+[node name="MainCamera" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(400, -130)
+limit_top = 0
+limit_right = 1350
+limit_smoothed = true
+position_smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="wallStaticBody" type="StaticBody2D" parent="."]
+
+[node name="wallR" type="CollisionShape2D" parent="wallStaticBody"]
+position = Vector2(1058, 0)
+scale = Vector2(1, 100)
+shape = SubResource("RectangleShape2D_ajjnd")
+
+[node name="wallL" type="CollisionShape2D" parent="wallStaticBody"]
+position = Vector2(-1044, 0)
+scale = Vector2(1, 100)
+shape = SubResource("RectangleShape2D_r5jk0")

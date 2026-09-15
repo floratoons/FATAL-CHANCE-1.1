@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://corempp0w3wf8"]
+
+[ext_resource type="Texture2D" uid="uid://bei5af1br6uw3" path="res://assets/MainFightUI/HealthBarSprite.png" id="1_4av4t"]
+[ext_resource type="Script" uid="uid://dv7nbsggnutx5" path="res://scripts/health_bar.gd" id="1_lkre2"]
+[ext_resource type="Texture2D" uid="uid://78olq0uisy68" path="res://assets/MainFightUI/HealthBarBackground.png" id="1_xfmwm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0cg3"]
+bg_color = Color(0.063265726, 0.120772086, 0.10854084, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.27450982)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30gtx"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="HealthBar" type="TextureProgressBar"]
+z_index = 1
+offset_right = 250.0
+offset_bottom = 10.0
+scale = Vector2(0.15414535, 0.15414535)
+size_flags_horizontal = 0
+value = 100.0
+texture_under = ExtResource("1_xfmwm")
+texture_progress = ExtResource("1_4av4t")
+tint_under = Color(1, 1, 1, 0.7176471)
+script = ExtResource("1_lkre2")
+
+[node name="DamageBar" type="ProgressBar" parent="."]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.805
+offset_right = 0.80500007
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_r0cg3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_30gtx")
+value = 80.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 10.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

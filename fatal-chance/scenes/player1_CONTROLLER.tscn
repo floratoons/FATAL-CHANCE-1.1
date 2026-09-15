@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg4efg3kihumi"]
+
+[ext_resource type="Script" uid="uid://plvnjhdey54w" path="res://scripts/player_1_controller.gd" id="1_l2ouc"]
+[ext_resource type="Script" uid="uid://dgpsh071eifvc" path="res://scripts/hurtbox.gd" id="2_h1fbb"]
+[ext_resource type="PackedScene" uid="uid://corempp0w3wf8" path="res://scenes/UI/HealthBar.tscn" id="3_mao05"]
+[ext_resource type="PackedScene" uid="uid://bt6rf2ymc4c1h" path="res://scenes/UI/SoulMeter.tscn" id="4_s27n8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l4xo0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v5brt"]
+radius = 74.65343
+height = 204.0
+
+[node name="player1_controller" type="CharacterBody2D" groups=["p_1"]]
+script = ExtResource("1_l2ouc")
+
+[node name="player1_collider" type="CollisionShape2D" parent="."]
+scale = Vector2(7, 7)
+shape = SubResource("CapsuleShape2D_l4xo0")
+
+[node name="player1_LOADEDANIMS" type="Node2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_h1fbb")
+metadata/_custom_type_script = "uid://dgpsh071eifvc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-24, 4)
+scale = Vector2(1.2591519, 1.402708)
+shape = SubResource("CapsuleShape2D_v5brt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("3_mao05")]
+offset_left = 103.0
+offset_top = 23.0
+offset_right = 3306.0
+offset_bottom = 214.0
+
+[node name="SoulMeter" parent="CanvasLayer" instance=ExtResource("4_s27n8")]
+offset_left = 789.0
+offset_top = 99.00001
+offset_right = 914.0
+offset_bottom = 119.00001
+scale = Vector2(1.75, 1.75)
+fill_mode = 1
+
+[node name="StockMarker" type="Marker2D" parent="CanvasLayer"]
+position = Vector2(182, 120)
+
+[node name="TextMarker" type="Marker2D" parent="CanvasLayer"]
+position = Vector2(466, 516)
+
+[node name="p_2ComboTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="p_2ComboTimer" to="." method="_on_p_2_combo_timer_timeout"]

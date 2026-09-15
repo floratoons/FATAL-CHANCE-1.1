@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=3 uid="uid://blcyxhcsiypqr"]
+
+[ext_resource type="Script" uid="uid://d2t0ctju3gkus" path="res://scenes/UI/pause_screen.gd" id="1_npmmj"]
+[ext_resource type="Texture2D" uid="uid://drixygp7jtlem" path="res://assets/MainFightUI/FightWordsAssets.png" id="2_p0r30"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npmmj"]
+bg_color = Color(0.003921569, 0.003921569, 0.003921569, 0.7372549)
+
+[node name="PauseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_npmmj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1283.0
+offset_bottom = 1025.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_npmmj")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 885.0
+offset_right = 615.0
+offset_bottom = 916.0
+scale = Vector2(2.802491, 2.802491)
+text = "Resume"
+
+[node name="Player 1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 285.0
+offset_right = 251.0
+offset_bottom = 330.0
+theme_override_font_sizes/font_size = 32
+text = "Player 1"
+
+[node name="P1Controls" type="Label" parent="Player 1"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = 125.0
+offset_right = 218.0
+offset_bottom = 554.0
+theme_override_font_sizes/font_size = 24
+text = "A & D: Move
+W: Jump
+S: Crouch/Block
+
+J: Attack 1
+K: Attack 2
+
+S and J: Roll Slots
+J and K: BLUE
+K and L: YELLOW
+J and L: RED"
+horizontal_alignment = 1
+
+[node name="Player 2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 972.0
+offset_top = 277.0
+offset_right = 1096.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 32
+text = "Player 2"
+
+[node name="P2Controls" type="Label" parent="Player 2"]
+layout_mode = 0
+offset_left = -190.0
+offset_top = 111.0
+offset_right = 321.0
+offset_bottom = 732.0
+theme_override_font_sizes/font_size = 24
+text = "Left & Right Arrows: 
+Move
+Up Arrow: Jump
+Down Arrow: Crouch/Block
+
+Num Pad 1: Attack 1
+Num Pad 2: Attack 2
+
+Down Arrow and Num Pad 1: 
+Roll Slots
+Num 1 and Num 2: BLUE
+Num 2 and Num 3: YELLOW
+Num 1 and Num 3: RED"
+horizontal_alignment = 1
+
+[node name="Rolls" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -159.0
+offset_right = 180.0
+offset_bottom = 366.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Roll the Slot Machine 
+to Activate Your 
+Specials Input:
+Consecutive Matching 
+Symbols Will Increase 
+Your Damage"
+horizontal_alignment = 1
+
+[node name="FightWordsAssets" type="Sprite2D" parent="."]
+position = Vector2(654, 134)
+scale = Vector2(0.3352057, 0.3352057)
+texture = ExtResource("2_p0r30")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

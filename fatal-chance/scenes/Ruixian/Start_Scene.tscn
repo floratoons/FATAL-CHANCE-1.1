@@ -1,0 +1,150 @@
+[gd_scene load_steps=20 format=3 uid="uid://b88o8yr2bvmdq"]
+
+[ext_resource type="Script" uid="uid://b1ukxdpk6obtv" path="res://scripts/Ruixian/start_scene.gd" id="1_e0xgq"]
+[ext_resource type="Texture2D" uid="uid://d27hk7ulnoxjw" path="res://assets/Ruixian/CharacterSelectionBakground.JPG" id="2_2vkiy"]
+[ext_resource type="Texture2D" uid="uid://cs1rm30hhjbus" path="res://assets/stickers.png" id="3_b73k0"]
+[ext_resource type="Texture2D" uid="uid://c2julvukqssm1" path="res://assets/AnathemaSprites/anathema_spraytag.png" id="4_4ycls"]
+[ext_resource type="Texture2D" uid="uid://closo7ks1nyeq" path="res://assets/fatal_chance_logo.png" id="5_i2m37"]
+[ext_resource type="AudioStream" uid="uid://bpk7uhs1umygk" path="res://music_sfx/buttons_and_clicks/click.mp3" id="6_b73k0"]
+[ext_resource type="AudioStream" uid="uid://bbuu3hbwaxfrq" path="res://music_sfx/audio_clips/FATAL CHANCE! trim.mp3" id="7_p22y0"]
+
+[sub_resource type="Gradient" id="Gradient_l005r"]
+offsets = PackedFloat32Array(0, 0.36970684, 0.509772, 0.64820844, 1)
+colors = PackedColorArray(0.6039216, 0.5019608, 0.9764706, 0.43137255, 0.7254902, 0.5568628, 0.81960785, 1, 0.85718393, 0.6175534, 0.6501356, 1, 0.8039216, 0.84705883, 0.85882354, 1, 0.76862746, 1, 1, 0.3764706)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2vkiy"]
+gradient = SubResource("Gradient_l005r")
+width = 3
+height = 25
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_b73k0"]
+colors = PackedColorArray(1, 1, 1, 0.20784314, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_snxld"]
+gradient = SubResource("Gradient_b73k0")
+
+[sub_resource type="Gradient" id="Gradient_4ycls"]
+offsets = PackedFloat32Array(0, 0.50934577, 1)
+colors = PackedColorArray(1, 1, 1, 0.03529412, 1, 1, 1, 1, 1, 1, 1, 0.08627451)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nwceq"]
+gradient = SubResource("Gradient_4ycls")
+
+[sub_resource type="Curve" id="Curve_i2m37"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.08732876, 49.654312), 0.0, 0.0, 0, 0, Vector2(0.1609589, 3.8969269), 0.0, 0.0, 0, 0, Vector2(0.23972604, 48.02011), 0.0, 0.0, 0, 0, Vector2(0.31164384, 7.1652985), 0.0, 0.0, 0, 0, Vector2(0.37671232, 49.654312), 0.0, 0.0, 0, 0, Vector2(0.47431508, 7.1652985), 0.0, 0.0, 0, 0, Vector2(0.5582192, 56.19107), 0.0, 0.0, 0, 0, Vector2(0.65753424, -1.005661), 0.0, 0.0, 0, 0, Vector2(0.7363014, 51.288498), 0.0, 0.0, 0, 0, Vector2(0.82876706, -1.005661), 0.0, 0.0, 0, 0, Vector2(0.91438353, 49.654312), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 13
+
+[sub_resource type="CurveTexture" id="CurveTexture_dmo87"]
+curve = SubResource("Curve_i2m37")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_crbp8"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(500, 500, 1)
+gravity = Vector3(100, 20, 0)
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 5.9999976
+tangential_accel_curve = SubResource("CurveTexture_dmo87")
+damping_max = 100.00001
+scale_min = 1.5
+scale_max = 1.8
+color_ramp = SubResource("GradientTexture1D_nwceq")
+color_initial_ramp = SubResource("GradientTexture1D_snxld")
+
+[sub_resource type="Animation" id="Animation_2vkiy"]
+resource_name = "DropSword"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(638.99994, -257.0001), Vector2(638.99994, 423.0001), Vector2(638.99994, 383.99997)]
+}
+
+[sub_resource type="Animation" id="Animation_b73k0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(638.99994, -257.0001)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ycls"]
+_data = {
+&"DropSword": SubResource("Animation_2vkiy"),
+&"RESET": SubResource("Animation_b73k0")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_e0xgq")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_2vkiy")
+
+[node name="Stickers" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 1, 0.23137255)
+position = Vector2(778, -7)
+texture = ExtResource("3_b73k0")
+
+[node name="AnathemaSpraytag" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 1, 0.42745098)
+position = Vector2(942, 1159)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_4ycls")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(638.99994, -257.0001)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("5_i2m37")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 537.0
+offset_top = 698.0
+offset_right = 737.0
+offset_bottom = 768.0
+theme_override_font_sizes/font_size = 40
+text = "START"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(171, 505)
+amount = 25
+texture = SubResource("GradientTexture2D_2vkiy")
+lifetime = 5.0
+preprocess = 2.0
+speed_scale = 1.79
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_crbp8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4ycls")
+}
+autoplay = "DropSword"
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_b73k0")
+
+[node name="FATAL_CHANCE" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_p22y0")
+autoplay = true
+bus = &"FATAL_CHANCE"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8fvtmrxepwcm"]
+
+[ext_resource type="Script" uid="uid://bvk0tugk7ikit" path="res://scripts/player_2_controller.gd" id="1_26jli"]
+[ext_resource type="Script" uid="uid://dgpsh071eifvc" path="res://scripts/hurtbox.gd" id="2_0cnb2"]
+[ext_resource type="PackedScene" uid="uid://corempp0w3wf8" path="res://scenes/UI/HealthBar.tscn" id="3_v3k6e"]
+[ext_resource type="Texture2D" uid="uid://wm7h2kq1aqkc" path="res://assets/MainFightUI/HealthBarBackgroundFliped.png" id="4_nr1sv"]
+[ext_resource type="PackedScene" uid="uid://bt6rf2ymc4c1h" path="res://scenes/UI/SoulMeter.tscn" id="4_y212g"]
+[ext_resource type="Texture2D" uid="uid://w638263nww2n" path="res://assets/MainFightUI/HealthBarSpriteFlipped.png" id="5_jwvs0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gl3fx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v3k6e"]
+radius = 74.65343
+height = 204.0
+
+[node name="player2_controller" type="CharacterBody2D" groups=["p_2"]]
+script = ExtResource("1_26jli")
+
+[node name="player2_collider" type="CollisionShape2D" parent="."]
+scale = Vector2(7, 7)
+shape = SubResource("CapsuleShape2D_gl3fx")
+
+[node name="player2_LOADEDANIMS" type="Node2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("2_0cnb2")
+metadata/_custom_type_script = "uid://dgpsh071eifvc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(-24, 4)
+scale = Vector2(1.2591519, 1.402708)
+shape = SubResource("CapsuleShape2D_v3k6e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("3_v3k6e")]
+offset_left = 688.0
+offset_top = 23.0
+offset_right = 3891.0
+offset_bottom = 214.0
+fill_mode = 1
+texture_under = ExtResource("4_nr1sv")
+texture_progress = ExtResource("5_jwvs0")
+
+[node name="SoulMeter" parent="CanvasLayer" instance=ExtResource("4_y212g")]
+offset_left = 288.00003
+offset_top = 99.00001
+offset_right = 413.00003
+offset_bottom = 119.00001
+scale = Vector2(1.75, 1.75)
+
+[node name="StockMarker" type="Marker2D" parent="CanvasLayer"]
+position = Vector2(1042, 120)
+
+[node name="TextMarker" type="Marker2D" parent="CanvasLayer"]
+position = Vector2(466, 516)
+
+[node name="p_1ComboTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="p_1ComboTimer" to="." method="_on_p_1_combo_timer_timeout"]

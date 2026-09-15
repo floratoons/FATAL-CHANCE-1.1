@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1xn28nq1wetf"]
+
+[ext_resource type="Shader" uid="uid://frqsyvpf6bd8" path="res://scripts/slot machine/spin_tex.gdshader" id="1_6bc17"]
+[ext_resource type="Script" uid="uid://bg0vlabumv6s1" path="res://scripts/slot_mechanic.gd" id="1_esu7s"]
+[ext_resource type="Texture2D" uid="uid://boloamfdcf28t" path="res://assets/Ruixian/slotframe.PNG" id="2_3nkyg"]
+[ext_resource type="Texture2D" uid="uid://c6gcsjhf4t5gj" path="res://assets/TalismanSpirtes/Tiles.png" id="4_3nkyg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7tig7"]
+shader = ExtResource("1_6bc17")
+shader_parameter/tex = ExtResource("4_3nkyg")
+shader_parameter/n_rows = 3.0
+shader_parameter/y_offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_esu7s"]
+shader = ExtResource("1_6bc17")
+shader_parameter/tex = ExtResource("4_3nkyg")
+shader_parameter/n_rows = 3.0
+shader_parameter/y_offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3nkyg"]
+shader = ExtResource("1_6bc17")
+shader_parameter/tex = ExtResource("4_3nkyg")
+shader_parameter/n_rows = 3.0
+shader_parameter/y_offset = 0.0
+
+[node name="Control" type="Control" node_paths=PackedStringArray("spinners") groups=["slotmachine"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_esu7s")
+spinners = [NodePath("slots1"), NodePath("slots2"), NodePath("slots3")]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Slotframe" type="Sprite2D" parent="."]
+position = Vector2(0.171875, 0.3750229)
+rotation = 3.1415927
+scale = Vector2(0.34591475, 0.34591475)
+texture = ExtResource("2_3nkyg")
+
+[node name="slots1" type="ColorRect" parent="." groups=["slot1"]]
+material = SubResource("ShaderMaterial_7tig7")
+layout_mode = 0
+offset_left = -153.82813
+offset_top = -45.624973
+offset_right = -53.828125
+offset_bottom = 54.375027
+
+[node name="slots2" type="ColorRect" parent="." groups=["slot2"]]
+material = SubResource("ShaderMaterial_esu7s")
+layout_mode = 0
+offset_left = -43.828125
+offset_top = -45.624973
+offset_right = 56.171875
+offset_bottom = 54.375027
+
+[node name="slots3" type="ColorRect" parent="." groups=["slot3"]]
+material = SubResource("ShaderMaterial_3nkyg")
+layout_mode = 0
+offset_left = 66.171875
+offset_top = -45.624973
+offset_right = 166.17188
+offset_bottom = 54.375027

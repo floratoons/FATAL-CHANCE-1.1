@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt6rf2ymc4c1h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8wye"]
+bg_color = Color(0, 0, 0, 0.5764706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7h8m"]
+bg_color = Color(11.708, 11.708, 11.708, 1)
+
+[node name="SoulMeter" type="ProgressBar"]
+offset_right = 150.0
+offset_bottom = 20.0
+theme_override_styles/background = SubResource("StyleBoxFlat_k8wye")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v7h8m")
+step = 1.0
+show_percentage = false

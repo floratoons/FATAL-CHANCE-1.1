@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bk60t4rkq6om4"
+path="res://.godot/imported/TALISMAN trim.mp3-05e49d6370118aa15ad782dc48eeae4c.mp3str"
+
+[deps]
+
+source_file="res://music_sfx/audio_clips/TALISMAN trim.mp3"
+dest_files=["res://.godot/imported/TALISMAN trim.mp3-05e49d6370118aa15ad782dc48eeae4c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

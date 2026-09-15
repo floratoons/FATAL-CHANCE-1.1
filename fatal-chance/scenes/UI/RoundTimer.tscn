@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dahlf8qlqf5u3"]
+
+[ext_resource type="Script" uid="uid://dgul3ghaunq8x" path="res://scripts/RoundTimer.gd" id="1_e4axv"]
+
+[node name="RoundTimer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e4axv")
+
+[node name="TimerText" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 100.0
+autostart = true
