@@ -215,70 +215,6 @@ tracks/6/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_nbjmh"]
-resource_name = "crouch"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("4_hg4cn")]
-}
-
-[sub_resource type="Animation" id="Animation_oltm3"]
-resource_name = "idle"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.49999997, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("8_h3w6u"), ExtResource("2_h3w6u"), ExtResource("8_h3w6u"), ExtResource("2_h3w6u"), ExtResource("8_h3w6u")]
-}
-
-[sub_resource type="Animation" id="Animation_r4062"]
-resource_name = "jump"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 1, 1.25, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("4_hg4cn"), ExtResource("5_utpdg"), ExtResource("6_fqky2"), ExtResource("4_hg4cn"), ExtResource("2_bifba")]
-}
-
-[sub_resource type="Animation" id="Animation_wx7cq"]
-resource_name = "walk"
-length = 0.9
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("7_hsjpj"), ExtResource("8_fh72n"), ExtResource("9_47fs5"), ExtResource("10_8lmsu"), ExtResource("11_nbjmh"), ExtResource("12_h3w6u"), ExtResource("7_hsjpj")]
-}
-
 [sub_resource type="Animation" id="Animation_nx7rl"]
 resource_name = "S1"
 length = 1.5
@@ -433,6 +369,70 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [5.1745405, -0.36306965, 1.8372625, 5.121446, 5.1745405, -0.71817625, -1.0850964, -0.36306965, 1.8372625, 5.121446, 5.1745405]
+}
+
+[sub_resource type="Animation" id="Animation_nbjmh"]
+resource_name = "crouch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_hg4cn")]
+}
+
+[sub_resource type="Animation" id="Animation_oltm3"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.49999997, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_h3w6u"), ExtResource("2_h3w6u"), ExtResource("8_h3w6u"), ExtResource("2_h3w6u"), ExtResource("8_h3w6u")]
+}
+
+[sub_resource type="Animation" id="Animation_r4062"]
+resource_name = "jump"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 1, 1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_hg4cn"), ExtResource("5_utpdg"), ExtResource("6_fqky2"), ExtResource("4_hg4cn"), ExtResource("2_bifba")]
+}
+
+[sub_resource type="Animation" id="Animation_wx7cq"]
+resource_name = "walk"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_hsjpj"), ExtResource("8_fh72n"), ExtResource("9_47fs5"), ExtResource("10_8lmsu"), ExtResource("11_nbjmh"), ExtResource("12_h3w6u"), ExtResource("7_hsjpj")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8tls6"]
