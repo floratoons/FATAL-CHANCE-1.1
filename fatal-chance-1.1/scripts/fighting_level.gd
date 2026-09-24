@@ -167,6 +167,12 @@ func reset_players():
 	$CanvasLayer/SoulMeterFullP1.hide()
 	$CanvasLayer/SoulMeterFullP2.hide()
 	
+	#health reset
+	p_1.p_1_current_health = 100;
+	p_1.health_bar.set_health(100);
+	p_2.p_2_current_health = 100;
+	p_2.health_bar.set_health(100);
+	
 	#add starts here
 	#await get_tree().create_timer(0.25).timeout
 	#get_tree().paused = true
