@@ -19,3 +19,5 @@ func _on_area_entered(hitbox: FrameData) -> void:
 	#if they have it then call the function with the hitbox's damage number
 	if owner.has_method("send_damage"):
 		owner.send_damage(hitbox.damage)
+	if owner.has_method("send_knockback"):
+		owner.send_knockback(hitbox.knockback_force)

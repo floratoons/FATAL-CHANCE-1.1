@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b2phxnvltprk4" path="res://scenes/ground.tscn" id="1_a5f3i"]
 [ext_resource type="Script" uid="uid://b44xuna16rqwy" path="res://scripts/fighting_level.gd" id="1_ciglj"]
 [ext_resource type="Texture2D" uid="uid://dfxbr0xsu1lg6" path="res://assets/background.jpg" id="3_eckv4"]
-[ext_resource type="Script" uid="uid://8ey7px4vt8ls" path="res://scenes/RoundTimer.gd" id="4_ciglj"]
+[ext_resource type="Script" uid="uid://8ey7px4vt8ls" path="res://scripts/RoundTimer.gd" id="4_ciglj"]
 [ext_resource type="Texture2D" uid="uid://c2julvukqssm1" path="res://assets/AnathemaSprites/anathema_spraytag.png" id="4_cycp4"]
 [ext_resource type="Texture2D" uid="uid://m8eaqgwbog4h" path="res://assets/backboard_stickered.png" id="5_pncl3"]
 [ext_resource type="PackedScene" uid="uid://50ec0ur4hkr7" path="res://scenes/UI/UIStickerFeedBack.tscn" id="5_sbkwt"]

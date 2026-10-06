@@ -13,6 +13,7 @@ height = 204.0
 
 [node name="player1_controller" type="CharacterBody2D" groups=["p_1"]]
 script = ExtResource("1_l2ouc")
+knockback_force = 5000
 
 [node name="player1_collider" type="CollisionShape2D" parent="."]
 scale = Vector2(7, 7)

@@ -628,6 +628,7 @@ libraries = {
 [node name="FrameData" type="Area2D" parent="."]
 script = ExtResource("2_4qmw8")
 damage = 8
+knockback_force = 3000
 metadata/_custom_type_script = "uid://cdra6accyalp7"
 
 [node name="A1" type="CollisionShape2D" parent="FrameData"]
@@ -640,6 +641,7 @@ debug_color = Color(0.97009283, 0, 0.46019125, 0.41960785)
 [node name="FrameData2" type="Area2D" parent="."]
 script = ExtResource("2_4qmw8")
 damage = 7
+knockback_force = 2500
 metadata/_custom_type_script = "uid://cdra6accyalp7"
 
 [node name="B1" type="CollisionShape2D" parent="FrameData2"]

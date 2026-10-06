@@ -25,6 +25,7 @@ var slots_have_rolled = false
 
 @export var health: int = 100
 @export var p_1_current_health: int
+@export var knockback_force: int
 
 @onready var p_2_combo_timer = $p_2ComboTimer
 var hits_in_a_row = 0
@@ -49,6 +50,8 @@ var attacking: bool = false
 var jumping: bool = false
 var crouching: bool = false
 var dashing: bool = false
+var damaged: bool = false
+var dir: int
 
 var can_dash: bool = false
 var can_crouch: bool = true
@@ -80,7 +83,8 @@ func _ready() -> void:
 	
 	text_animation_player = get_tree().get_first_node_in_group("textanimator")
 
-	pass
+func send_knockback(amount: int) -> void:
+	knockback_force = amount
 
 func _physics_process(delta: float) -> void:
 	combo_timer -= delta
@@ -132,6 +136,15 @@ func _physics_process(delta: float) -> void:
 
 	roll_slots()
 
+	if (get_node("player1_LOADEDANIMS/Sprite2D").flip_h == false):
+		dir = -1
+		#print(dir)
+		pass
+	if (get_node("player1_LOADEDANIMS/Sprite2D").flip_h == true):
+		dir = 1
+		#print(dir)
+		pass
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left_p1", "right_p1")
@@ -141,11 +154,26 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = direction * SPEED
 			moving = true
+			if damaged and moving:
+				print("knockback")
+				#play knockback anim
+				velocity.x = dir * knockback_force
+				print(velocity.x)
+				print(knockback_force)
+				damaged = false
 			if not attacking and not jumping and moving and is_on_floor():
 				animation_player.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		moving = false
+		if damaged:
+			print("knockback")
+			#play knockback anim
+			#knockback_dir = direction * -1
+			velocity.x = dir * knockback_force
+			print(velocity.x)
+			print(knockback_force)
+			damaged = false
 
 	move_and_slide()
 	
@@ -284,6 +312,8 @@ func send_damage(amount: int) -> void:
 		can_crouch = false
 		crouching = false
 	else:
+		damaged = true
+		print("damaged: ", damaged)
 		p_1_current_health -= amount
 		soul_meter.value += amount * 2.5
 		print("Damage: ", amount)
