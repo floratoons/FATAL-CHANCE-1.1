@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://lkp50d3w6q1"]
+
+[ext_resource type="Script" uid="uid://fysq3cwf2d10" path="res://scenes/Valerie Menu Test/carousel_menu_ui.gd" id="1_on675"]
+
+[node name="CarouselMenuUi" type="Node2D"]
+script = ExtResource("1_on675")
