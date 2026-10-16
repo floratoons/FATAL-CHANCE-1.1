@@ -20,7 +20,7 @@ class_name CarouselUI
 #bool to follow the selected child
 @export var follow_button_focus: bool = false
 #the position of the selected node
-@export var position_offset: Control = null	
+@export var position_offset: Control 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
