@@ -3,8 +3,8 @@ extends Node2D
 # Get references to all nodes in the scene
 @onready var p1_label = $P1Label
 @onready var p2_label = $P2Label
-@onready var card1 = $CharacterGrid/CharacterCard1
-@onready var card2 = $CharacterGrid/CharacterCard2
+@onready var card1 = $HorisontalUI/Control/CharacterCard1
+@onready var card2 = $HorisontalUI/Control/CharacterCard2
 
 # Indicator that follows the mouse when hovering
 @onready var indicator = $PlayerIndicator
@@ -15,8 +15,8 @@ extends Node2D
 # Indicator that stays locked on P2's chosen character
 @onready var locked_indicator2 = $LockedIndicator2
 
-@onready var border1 = $CharacterGrid/CharacterCard1/Border
-@onready var border2 = $CharacterGrid/CharacterCard2/Border
+@onready var border1 = $HorisontalUI/Control/CharacterCard1/Border
+@onready var border2 = $HorisontalUI/Control/CharacterCard2/Border
 
 #Animation of the Text
 @onready var text_slide_anim = $TextSlideInAnimationPlayer
@@ -98,6 +98,19 @@ func _process(delta):
 	if locked_indicator2.visible:
 		locked_bounce_time2 += delta * 4.0
 		locked_indicator2.position.y = locked_base_y2 + sin(locked_bounce_time2) * 8.0
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("left_p1"):
+		print("called")
+		$HorisontalUI.selected_index -= 1
+		if $HorisontalUI.selected_index < 0:
+			$HorisontalUI.selected_index = 5
+	if Input.is_action_just_pressed("right_p1"):
+		print("called")
+		$HorisontalUI.selected_index += 1
+		#can change to 6 later
+		if $HorisontalUI.selected_index > 5:
+			$HorisontalUI.selected_index = 0
 
 # Returns the position just above the center of a card, for placing indicators
 func _get_card_top_center(card: TextureButton) -> Vector2:

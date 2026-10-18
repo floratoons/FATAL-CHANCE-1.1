@@ -9,7 +9,6 @@ script = ExtResource("1_kj8um")
 wraparound_radius = 150.0
 wraparound_width = 30.0
 opacity_strength = 0.5
-selected_index = 1
 position_offset = NodePath("Control")
 metadata/_custom_type_script = "uid://fysq3cwf2d10"
 
@@ -20,71 +19,73 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="CarouselUI/Control"]
-modulate = Color(1, 1, 1, 0.5)
-z_index = -1
-layout_mode = 0
-offset_left = -40.729492
-offset_top = -162.65845
-offset_right = -0.7294922
-offset_bottom = -122.65849
-scale = Vector2(0.75, 0.75)
-pivot_offset = Vector2(20, 19.999977)
-mouse_filter = 2
-
-[node name="Panel2" type="Panel" parent="CarouselUI/Control"]
+modulate = Color(1, 1, 1, 0.9999994)
 z_index = 1
 layout_mode = 0
-offset_left = -20.0
-offset_top = -19.998642
-offset_right = 20.0
-offset_bottom = 19.998642
-pivot_offset = Vector2(20, 19.998642)
+offset_left = -20.00002
+offset_top = -19.999996
+offset_right = 19.99998
+offset_bottom = 19.999958
+scale = Vector2(0.9999994, 0.9999994)
+pivot_offset = Vector2(20, 19.999977)
 focus_mode = 2
 
-[node name="Panel3" type="Panel" parent="CarouselUI/Control"]
-modulate = Color(1, 1, 1, 0.5)
+[node name="Panel2" type="Panel" parent="CarouselUI/Control"]
+modulate = Color(1, 1, 1, 0.5000006)
 z_index = -1
 layout_mode = 0
-offset_left = -40.729492
-offset_top = 122.659
-offset_right = -0.7294922
-offset_bottom = 162.65796
-scale = Vector2(0.75, 0.75)
-pivot_offset = Vector2(20, 19.999481)
+offset_left = -40.729454
+offset_top = 122.65994
+offset_right = -0.72945404
+offset_bottom = 162.65686
+scale = Vector2(0.7500006, 0.7500006)
+pivot_offset = Vector2(20, 19.998459)
+mouse_filter = 2
+
+[node name="Panel3" type="Panel" parent="CarouselUI/Control"]
+modulate = Color(1, 1, 1, 1.2825777e-10)
+z_index = -2
+layout_mode = 0
+offset_left = -74.27043
+offset_top = 68.16838
+offset_right = -34.27043
+offset_bottom = 108.167336
+scale = Vector2(0.5000006, 0.5000006)
+pivot_offset = Vector2(20, 19.999477)
 mouse_filter = 2
 
 [node name="Panel4" type="Panel" parent="CarouselUI/Control"]
-modulate = Color(1, 1, 1, 0)
-z_index = -2
+modulate = Color(1, 1, 1, 3.4119537e-11)
+z_index = -3
 layout_mode = 0
-offset_left = -74.27051
-offset_top = 68.16762
-offset_right = -34.270508
-offset_bottom = 108.167946
-scale = Vector2(0.5, 0.5)
-pivot_offset = Vector2(20, 20.000164)
+offset_left = -79.99992
+offset_top = -20.00016
+offset_right = -39.999924
+offset_bottom = 20.000198
+scale = Vector2(0.2500003, 0.2500003)
+pivot_offset = Vector2(20, 20.00018)
 mouse_filter = 2
 
 [node name="Panel5" type="Panel" parent="CarouselUI/Control"]
-modulate = Color(1, 1, 1, 0)
-z_index = -3
+modulate = Color(1, 1, 1, 9.012742e-12)
+z_index = -4
 layout_mode = 0
-offset_left = -80.0
-offset_top = -19.999405
-offset_right = -40.0
-offset_bottom = 19.999405
-scale = Vector2(0.25, 0.25)
-pivot_offset = Vector2(20, 19.999405)
+offset_left = -79.99992
+offset_top = -19.99937
+offset_right = -39.999924
+offset_bottom = 19.999409
+scale = Vector2(0.100000076, 0.100000076)
+pivot_offset = Vector2(20, 19.99939)
 mouse_filter = 2
 
 [node name="Panel6" type="Panel" parent="CarouselUI/Control"]
-modulate = Color(1, 1, 1, 0)
-z_index = -4
+modulate = Color(1, 1, 1, 2.9744232e-12)
+z_index = -5
 layout_mode = 0
-offset_left = -80.0
-offset_top = -19.999382
-offset_right = -40.0
-offset_bottom = 19.999382
-scale = Vector2(0.1, 0.1)
-pivot_offset = Vector2(20, 19.999382)
+offset_left = -79.99992
+offset_top = -19.999386
+offset_right = -39.999924
+offset_bottom = 19.999424
+scale = Vector2(0.100000076, 0.100000076)
+pivot_offset = Vector2(20, 19.999405)
 mouse_filter = 2
