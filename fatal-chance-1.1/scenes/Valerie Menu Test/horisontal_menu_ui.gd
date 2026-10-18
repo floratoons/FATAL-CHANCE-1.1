@@ -3,8 +3,6 @@ extends Node2D
 
 class_name HorisontalUI
 
-#spacing between children in menu
-@export var spacing: float = 20
 #menu has to wrap vertically so
 @export var wraparound_radius: float = 300
 @export var wraparound_height: float = 50

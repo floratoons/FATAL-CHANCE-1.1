@@ -7,10 +7,13 @@
 [node name="HorisontalUI" type="Node2D" parent="." node_paths=PackedStringArray("position_offset")]
 scale = Vector2(3.959999, 4.5600004)
 script = ExtResource("1_qh0qy")
-spacing = 5.0
 wraparound_radius = 100.0
-wraparound_height = 10.0
-opacity_strength = 0.111
+wraparound_height = 5.0
+opacity_strength = 0.5
+scale_min = 0.5
+smoothing_speed = 10.0
+selected_index = 2
+follow_button_focus = true
 position_offset = NodePath("Control")
 metadata/_custom_type_script = "uid://c7ccy87urofy7"
 
@@ -21,49 +24,47 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Panel4" type="Panel" parent="HorisontalUI/Control"]
-modulate = Color(1, 1, 1, 0.9999996)
-z_index = 1
+modulate = Color(1, 1, 1, 0)
+z_index = -2
 layout_mode = 0
-offset_left = -20.000025
-offset_top = -20.000013
-offset_right = 19.999975
-offset_bottom = 19.999987
-scale = Vector2(0.9999996, 0.9999996)
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(20, 20)
-focus_mode = 2
+mouse_filter = 2
 
 [node name="Panel3" type="Panel" parent="HorisontalUI/Control"]
-modulate = Color(1, 1, 1, 0.8890004)
+modulate = Color(1, 1, 1, 0.5)
 z_index = -1
 layout_mode = 0
-offset_left = 66.60314
-offset_top = -34.999973
-offset_right = 106.60183
-offset_bottom = 5.0000267
-scale = Vector2(0.7500004, 0.7500004)
-pivot_offset = Vector2(19.999344, 20)
+offset_left = -106.60193
+offset_top = -27.5
+offset_right = -66.60315
+offset_bottom = 12.5
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(19.99939, 20)
 mouse_filter = 2
 
 [node name="Panel2" type="Panel" parent="HorisontalUI/Control"]
-modulate = Color(1, 1, 1, 0.7780004)
-z_index = -2
+z_index = 1
 layout_mode = 0
-offset_left = -20.000135
-offset_top = -39.999973
-offset_right = 20.000185
-offset_bottom = 2.670288e-05
-scale = Vector2(0.5000004, 0.5000004)
-pivot_offset = Vector2(20.00016, 20)
-mouse_filter = 2
+offset_left = -20.000156
+offset_top = -20.0
+offset_right = 20.000156
+offset_bottom = 20.0
+pivot_offset = Vector2(20.000156, 20)
+focus_mode = 2
 
 [node name="Panel" type="Panel" parent="HorisontalUI/Control"]
-modulate = Color(1, 1, 1, 0.6670004)
-z_index = -3
+modulate = Color(1, 1, 1, 0.5)
+z_index = -1
 layout_mode = 0
-offset_left = -19.999933
-offset_top = -39.999973
-offset_right = 19.99996
-offset_bottom = 2.670288e-05
-scale = Vector2(0.2500002, 0.2500002)
-pivot_offset = Vector2(19.999947, 20)
+offset_left = 66.60265
+offset_top = -27.5
+offset_right = 106.602425
+offset_bottom = 12.5
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(19.999886, 20)
 mouse_filter = 2
