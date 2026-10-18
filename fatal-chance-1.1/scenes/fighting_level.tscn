@@ -1011,6 +1011,7 @@ texture = ExtResource("4_cycp4")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="BackboardStickered" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 position = Vector2(640, 990)
 texture = ExtResource("5_pncl3")
 

@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://b6gmefskwdvcf"]
+
+[ext_resource type="Texture2D" uid="uid://jwlwx7rg0qeo" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_idle_2.PNG" id="1_ydvvx"]
+[ext_resource type="Texture2D" uid="uid://c53uvr5lomt7n" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_idle_1.PNG" id="2_gluef"]
+[ext_resource type="Texture2D" uid="uid://b7bwmqlrbhr0o" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_walk_1.PNG" id="3_7jfvw"]
+[ext_resource type="Script" uid="uid://cdra6accyalp7" path="res://scripts/frame_data.gd" id="3_jyu70"]
+[ext_resource type="Texture2D" uid="uid://d28yr0po1x8u5" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_walk_2.PNG" id="4_b0o4h"]
+
+[sub_resource type="Animation" id="Animation_7jfvw"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_gluef"), ExtResource("1_ydvvx"), ExtResource("2_gluef"), ExtResource("1_ydvvx"), ExtResource("2_gluef")]
+}
+
+[sub_resource type="Animation" id="Animation_b0o4h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ydvvx")]
+}
+
+[sub_resource type="Animation" id="Animation_bb6mi"]
+resource_name = "jump"
+
+[sub_resource type="Animation" id="Animation_i41w0"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.4, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_7jfvw"), ExtResource("4_b0o4h"), ExtResource("3_7jfvw"), ExtResource("4_b0o4h")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1g15b"]
+_data = {
+&"RESET": SubResource("Animation_b0o4h"),
+&"idle": SubResource("Animation_7jfvw"),
+&"jump": SubResource("Animation_bb6mi"),
+&"walk": SubResource("Animation_i41w0")
+}
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_ydvvx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1g15b")
+}
+
+[node name="FrameData" type="Area2D" parent="."]
+script = ExtResource("3_jyu70")
+metadata/_custom_type_script = "uid://cdra6accyalp7"
