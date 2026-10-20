@@ -31,12 +31,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srmed"]
 
-[sub_resource type="Gradient" id="Gradient_l005r"]
+[sub_resource type="Gradient" id="Gradient_44brw"]
 offsets = PackedFloat32Array(0, 0.36970684, 0.509772, 0.64820844, 1)
 colors = PackedColorArray(0.6039216, 0.5019608, 0.9764706, 0.43137255, 0.7254902, 0.5568628, 0.81960785, 1, 0.85718393, 0.6175534, 0.6501356, 1, 0.8039216, 0.84705883, 0.85882354, 1, 0.76862746, 1, 1, 0.3764706)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_oo7ha"]
-gradient = SubResource("Gradient_l005r")
+gradient = SubResource("Gradient_44brw")
 width = 3
 height = 25
 fill_to = Vector2(0, 1)
@@ -44,14 +44,14 @@ fill_to = Vector2(0, 1)
 [sub_resource type="Gradient" id="Gradient_n0koh"]
 colors = PackedColorArray(1, 1, 1, 0.20784314, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_du8ie"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hsoko"]
 gradient = SubResource("Gradient_n0koh")
 
 [sub_resource type="Gradient" id="Gradient_vvef2"]
 offsets = PackedFloat32Array(0, 0.50934577, 1)
 colors = PackedColorArray(1, 1, 1, 0.03529412, 1, 1, 1, 1, 1, 1, 1, 0.08627451)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_8kr26"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_86ft7"]
 gradient = SubResource("Gradient_vvef2")
 
 [sub_resource type="Curve" id="Curve_5plrm"]
@@ -59,7 +59,7 @@ _limits = [-200.0, 200.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.08732876, 49.654312), 0.0, 0.0, 0, 0, Vector2(0.1609589, 3.8969269), 0.0, 0.0, 0, 0, Vector2(0.23972604, 48.02011), 0.0, 0.0, 0, 0, Vector2(0.31164384, 7.1652985), 0.0, 0.0, 0, 0, Vector2(0.37671232, 49.654312), 0.0, 0.0, 0, 0, Vector2(0.47431508, 7.1652985), 0.0, 0.0, 0, 0, Vector2(0.5582192, 56.19107), 0.0, 0.0, 0, 0, Vector2(0.65753424, -1.005661), 0.0, 0.0, 0, 0, Vector2(0.7363014, 51.288498), 0.0, 0.0, 0, 0, Vector2(0.82876706, -1.005661), 0.0, 0.0, 0, 0, Vector2(0.91438353, 49.654312), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 13
 
-[sub_resource type="CurveTexture" id="CurveTexture_snxld"]
+[sub_resource type="CurveTexture" id="CurveTexture_37rab"]
 curve = SubResource("Curve_5plrm")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bwlns"]
@@ -69,12 +69,12 @@ emission_box_extents = Vector3(500, 500, 1)
 gravity = Vector3(100, 20, 0)
 tangential_accel_min = -2.2351742e-06
 tangential_accel_max = 5.9999976
-tangential_accel_curve = SubResource("CurveTexture_snxld")
+tangential_accel_curve = SubResource("CurveTexture_37rab")
 damping_max = 100.00001
 scale_min = 1.5
 scale_max = 1.8
-color_ramp = SubResource("GradientTexture1D_8kr26")
-color_initial_ramp = SubResource("GradientTexture1D_du8ie")
+color_ramp = SubResource("GradientTexture1D_86ft7")
+color_initial_ramp = SubResource("GradientTexture1D_hsoko")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ow2st"]
 load_path = "res://.godot/imported/dust.png-8de900a4d620f6d3f2d6aed43df1801b.ctex"
@@ -1047,6 +1047,7 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("12_n0koh")
 theme_override_font_sizes/font_size = 48
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="RoundTimer" type="Timer" parent="CanvasLayer/Timer"]
 wait_time = 100.0

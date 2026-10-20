@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://x7a115mn88dw"]
+[gd_scene load_steps=22 format=3 uid="uid://x7a115mn88dw"]
 
 [ext_resource type="PackedScene" uid="uid://c02rplrex3ckh" path="res://scenes/Ruixian/MapCard1.tscn" id="1_2y5ku"]
 [ext_resource type="Texture2D" uid="uid://d27hk7ulnoxjw" path="res://assets/Ruixian/CharacterSelectionBakground.JPG" id="1_x8nq3"]
@@ -114,6 +114,16 @@ _data = {
 &"normal": SubResource("Animation_n81x0")
 }
 
+[sub_resource type="Theme" id="Theme_0x3ma"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m86pf"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cetpu"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(1, 1, 1, 1)
+expand_margin_bottom = 35.0
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, -1)
 
@@ -124,11 +134,14 @@ texture = ExtResource("1_x8nq3")
 [node name="Area2D" parent="." instance=ExtResource("1_2y5ku")]
 position = Vector2(29.000004, -304)
 rotation = 0.12915437
+map_scene = "fighting_level"
 
 [node name="Area2D2" parent="." instance=ExtResource("2_x8nq3")]
 position = Vector2(557, 250)
+map_scene = "training_level"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
 position = Vector2(130, 512)
 amount = 25
 texture = SubResource("GradientTexture2D_x8nq3")
@@ -156,5 +169,19 @@ autoplay = "normal"
 stream = ExtResource("5_n81x0")
 
 [node name="MusicManager" parent="." instance=ExtResource("6_0x3ma")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 812.00006
+offset_top = 930.00006
+offset_right = 1158.0
+offset_bottom = 970.00006
+rotation = -0.1407184
+scale = Vector2(1.1270036, 1.1651134)
+theme = SubResource("Theme_0x3ma")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_m86pf")
+theme_override_styles/background = SubResource("StyleBoxFlat_cetpu")
+text = "TRAINING ROOM"
 
 [editable path="MusicManager"]
