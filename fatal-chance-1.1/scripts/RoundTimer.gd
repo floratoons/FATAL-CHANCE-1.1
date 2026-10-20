@@ -3,11 +3,18 @@ extends Node
 @onready var text = $TimerText
 @onready var timer = $RoundTimer
 
-var time = 100
+var time
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	assign_time()
 
+# different timer for fighting vs training level
+func assign_time():
+	if (owner.name == "TrainingLevel"):
+		time = 100000
+	else:
+		pass
+	#print("Scene: " + str(owner.name) + "Time: " + str(time))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -18,5 +25,5 @@ func _process(delta: float) -> void:
 		pass
 
 func reset_timer():
-	time = 100
+	assign_time()
 	pass
