@@ -115,6 +115,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("right_p1"):
 			print("called")
 			$HorisontalUI.selected_index += 1
+			$SplashAnimationPlayer.play("p1_default")
 			#can change to 6 later
 			if $HorisontalUI.selected_index > 5:
 				$HorisontalUI.selected_index = 0
@@ -122,11 +123,13 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("left_p2"):
 			print("called")
 			$HorisontalUI.selected_index -= 1
+			$SplashAnimationPlayer.play("p2_default")
 			if $HorisontalUI.selected_index < 0:
 				$HorisontalUI.selected_index = 5
 		if Input.is_action_just_pressed("right_p2"):
 			print("called")
 			$HorisontalUI.selected_index += 1
+			$SplashAnimationPlayer.play("p2_default")
 			#can change to 6 later
 			if $HorisontalUI.selected_index > 5:
 				$HorisontalUI.selected_index = 0
@@ -151,6 +154,7 @@ func _physics_process(delta: float) -> void:
 			_on_card3_pressed()
 	else:
 		_on_card_hover_exit()
+			
 
 # Returns the position just above the center of a card, for placing indicators
 func _get_card_top_center(card: TextureButton) -> Vector2:
@@ -174,21 +178,12 @@ func _on_card1_hover_enter():
 		indicator.text = "P1"
 		indicator.add_theme_color_override("font_color", Color(0.996, 0.0, 0.941))
 		_set_border(border1, Color(0.996, 0.0, 0.941))
-		#adds the char sprite to the side
-		#var anathema_instance = anathema.instantiate()
-		#$P1Marker.add_child(anathema_instance)
-		#$P1Marker/Sprite2D/AnimationPlayer.play("idle")
 		#starts character splash flicker
 		$SplashAnimationPlayer.play("anathema1_flicker")
 	elif current_turn == 2:
 		indicator.text = "P2"
 		indicator.add_theme_color_override("font_color", Color(1, 0.9, 0.0))
 		_set_border(border1, Color(1, 0.9, 0.0))
-		#adds the char sprite to the side
-		#var anathema_instance = anathema.instantiate()
-		#$P2Marker.add_child(anathema_instance)
-		#anathema_instance.scale.x = -1
-		#$P2Marker/Sprite2D/AnimationPlayer.play("idle")
 		$SplashAnimationPlayer.play("anathema2_flicker")
 
 # When mouse enters card2
@@ -206,20 +201,11 @@ func _on_card2_hover_enter():
 		indicator.text = "P1"
 		indicator.add_theme_color_override("font_color", Color(0.996, 0.0, 0.941))
 		_set_border(border2, Color(0.996, 0.0, 0.941))
-		#add char sprite to side
-		#var talisman_instance = talisman.instantiate()
-		#$P1Marker.add_child(talisman_instance)
-		#$P1Marker/Sprite2D/AnimationPlayer.play("idle")
 		$SplashAnimationPlayer.play("talisman1_flicker")
 	elif current_turn == 2:
 		indicator.text = "P2"
 		indicator.add_theme_color_override("font_color", Color(1, 0.9, 0.0))
 		_set_border(border2, Color(1, 0.9, 0.0))
-		#add char sprite
-		#var talisman_instance = talisman.instantiate()
-		#$P2Marker.add_child(talisman_instance)
-		#talisman_instance.scale.x = -1
-		#$P2Marker/Sprite2D/AnimationPlayer.play("idle")
 		$SplashAnimationPlayer.play("talisman2_flicker")
 
 func _on_card3_hover_enter():
@@ -236,21 +222,11 @@ func _on_card3_hover_enter():
 		indicator.text = "P1"
 		indicator.add_theme_color_override("font_color", Color(0.996, 0.0, 0.941))
 		_set_border(border3, Color(0.996, 0.0, 0.941))
-		#adds the char sprite to the side
-		#var kismet_instance = kismet.instantiate()
-		#$P1Marker.add_child(kismet_instance)
-		#$P1Marker/Sprite2D/AnimationPlayer.play("idle")
-		#starts character splash flicker
-		#$SplashAnimationPlayer.play("anathema1_flicker")
+
 	elif current_turn == 2:
 		indicator.text = "P2"
 		indicator.add_theme_color_override("font_color", Color(1, 0.9, 0.0))
 		_set_border(border3, Color(1, 0.9, 0.0))
-		#adds the char sprite to the side
-		#var kismet_instance = kismet.instantiate()
-		#$P2Marker.add_child(kismet_instance)
-		#kismet_instance.scale.x = -1
-		#$P2Marker/Sprite2D/AnimationPlayer.play("idle")
 		#$SplashAnimationPlayer.play("anathema2_flicker")
 
 # When mouse exits any card
@@ -264,27 +240,7 @@ func _on_card_hover_exit():
 		border2.visible = false
 	if p1_choice != "Kismet" and p2_choice != "Kismet":
 		border3.visible = false
-	#sets up sprite deletion when not hovering on a card
-	if current_turn == 1:
-		if p1_choice != "Anathema" and p2_choice != "Anathema":
-			#$P1Marker/Sprite2D.queue_free()
-			$SplashAnimationPlayer.play("p1_default")
-		if p1_choice != "Talisman" and p2_choice != "Talisman":
-			#$P1Marker/Sprite2D.queue_free()
-			$SplashAnimationPlayer.play("p1_default")
-		if p1_choice != "Kismet" and p2_choice != "Kismet":
-			#$P1Marker/Sprite2D.queue_free()
-			$SplashAnimationPlayer.play("p1_default")
-	if current_turn == 2 and $P2Marker.get_child_count() == 1:
-		if p1_choice != "Anathema" and p2_choice != "Anathema":
-			#$P2Marker/Sprite2D.queue_free()
-			$SplashAnimationPlayer.play("p2_default")
-		if p1_choice != "Talisman" and p2_choice != "Talisman":
-			#$P2Marker/Sprite2D.queue_free()
-			$SplashAnimationPlayer.play("p2_default")
-		if p1_choice != "Kismet" and p2_choice != "Kismet":
-			#$P2Marker/Sprite2D.queue_free()
-			$SplashAnimationPlayer.play("p2_default")
+
 
 # Creates a StyleBox with a colored border and transparent background, applies it to a Panel
 func _set_border(border: Panel, color: Color):
