@@ -26,7 +26,6 @@ var player2_instance
 
 var round_counter = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SceneTransition.fade_out()
 	load_players()
@@ -85,7 +84,6 @@ func start_round_intro() -> void:
 	p_1.set_process_input(true)
 	p_2.set_process_input(true)
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	check_health_timer_reset()
 	check_for_slots()
@@ -154,6 +152,8 @@ func reset_players():
 	
 	sticker_reset()
 	
+	print("Resetting P1 'soul meter' to " + str(p_1.soul_meter.value))
+	print("Resetting P2 'soul meter' to " + str(p_2.soul_meter.value))
 	p_1.soul_meter.value = 0
 	p_2.soul_meter.value = 0
 	soul_meter_animation_player.stop()
@@ -166,16 +166,16 @@ func reset_players():
 	p_2.p_2_current_health = 100;
 	p_2.health_bar.set_health(100);
 	
-	#add starts here
-	#await get_tree().create_timer(0.25).timeout
-	#get_tree().paused = true
-	#await get_tree().create_timer(1).timeout
-	#get_tree().paused = false
+	print("Resetting 'lives lost' by -1")
+	p_1.lives_lost -= 1
+	p_2.lives_lost -= 1
+	
+	
+	
 	await get_tree().create_timer(1).timeout
 	get_tree().paused = true
 	await get_tree().create_timer(5).timeout
 	get_tree().paused = false
-
 
 func check_health_timer_reset():
 	#print("p2 health: " + str(p_2.p_2_current_health))
@@ -211,13 +211,14 @@ func check_health_timer_reset():
 func _on_round_timer_timeout() -> void:
 	print("round over")
 	if(p_1.p_1_current_health > p_2.p_2_current_health):
-		round_counter += 1
+		#round_counter += 1
 		print("p1 wins")
 		#round_timer.time = 7
 		await get_tree().create_timer(0.25).timeout
 		get_tree().paused = true
-		text_animation_player.play("ko_animation")
+		#text_animation_player.play("ko_animation")
 		await get_tree().create_timer(2).timeout
+		# auto killing p2 if they have less health when the timer runs out
 		p_2.send_damage(100)
 		#round_timer.set_wait_time(100)
 		#round_timer.start()
@@ -225,11 +226,12 @@ func _on_round_timer_timeout() -> void:
 		if p_1.lives_lost < 2 && p_2.lives_lost < 2:
 			reset_players()
 	elif (p_1.p_1_current_health < p_2.p_2_current_health):
-		round_counter += 1
+		#round_counter += 1
 		await get_tree().create_timer(0.25).timeout
 		get_tree().paused = true
-		text_animation_player.play("ko_animation")
+		#text_animation_player.play("ko_animation")
 		await get_tree().create_timer(2).timeout
+		# auto killing p1 if they have less health when the timer runs out
 		p_1.send_damage(100)
 		#round_timer.set_wait_time(100)
 		#round_timer.start()
