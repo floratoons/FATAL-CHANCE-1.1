@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=3 uid="uid://dihedvf0wlcej"]
+
+[ext_resource type="Shader" uid="uid://crmq2m4ulvmbw" path="res://assets/VFX/OutlineShader.gdshader" id="1_f2lsg"]
+[ext_resource type="Texture2D" uid="uid://cwbesmqnqqxcy" path="res://assets/MainFightUI/KO.png" id="3_fu4ad"]
+[ext_resource type="Texture2D" uid="uid://cy57un0gqq7fr" path="res://assets/VFX/slotmachine_shadertest.PNG" id="3_obefw"]
+[ext_resource type="Texture2D" uid="uid://dvrjm77p7stwu" path="res://assets/AnathemaSprites/anathema_anim_A2.png" id="4_obefw"]
+
+[sub_resource type="Gradient" id="Gradient_63bcq"]
+colors = PackedColorArray(0.32156864, 1, 0.9372549, 1, 0.99215686, 0.28235295, 0.6117647, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oti4n"]
+gradient = SubResource("Gradient_63bcq")
+
+[sub_resource type="Curve" id="Curve_n0h8b"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5aj30"]
+curve = SubResource("Curve_n0h8b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mekxj"]
+particle_flag_disable_z = true
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = -1.6093254e-05
+gravity = Vector3(0, -90, 0)
+scale_min = 5.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_5aj30")
+color_ramp = SubResource("GradientTexture1D_oti4n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f2lsg"]
+shader = ExtResource("1_f2lsg")
+shader_parameter/outline_color = Color(0.36862746, 0.94509804, 0.9137255, 1)
+shader_parameter/thickness = 50.00000074506
+shader_parameter/sample_count = 4
+shader_parameter/inner_outline = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_obefw"]
+shader = ExtResource("1_f2lsg")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/thickness = 72.40000107884688
+shader_parameter/sample_count = 8
+shader_parameter/inner_outline = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_63bcq"]
+shader = ExtResource("1_f2lsg")
+shader_parameter/outline_color = Color(0.88703966, 0, 0.15851787, 1)
+shader_parameter/thickness = 6.20000009238744
+shader_parameter/sample_count = 20
+shader_parameter/inner_outline = false
+
+[node name="OutlineShader" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(1535, -41)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_mekxj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_f2lsg")
+position = Vector2(1536, -7)
+scale = Vector2(0.1305213, 0.1305213)
+texture = ExtResource("3_obefw")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_obefw")
+position = Vector2(1726, -50.999996)
+scale = Vector2(0.10066661, 0.10066663)
+texture = ExtResource("3_fu4ad")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_63bcq")
+position = Vector2(1612, -111)
+scale = Vector2(0.32608697, 0.32608697)
+texture = ExtResource("4_obefw")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_63bcq")
+position = Vector2(1502.0001, -114)
+scale = Vector2(0.32608697, 0.32608697)
+texture = ExtResource("4_obefw")
