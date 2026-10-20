@@ -3,6 +3,7 @@ extends CharacterBody2D
 #characters to load
 var anathema = preload("res://scenes/anathema_anims.tscn")
 var talisman = preload("res://scenes/talisman_anims.tscn")
+var kismet = preload("res://scenes/kismet_anims.tscn")
 
 var animation_player
 var special_damage
@@ -293,6 +294,17 @@ func insert_player_anims():
 		talisman_instance.get_node("FrameDataSpecial2").collision_layer = 2
 		talisman_instance.get_node("FrameDataSpecial3").collision_layer = 2
 		get_node("Hurtbox").collision_mask = 4
+	if GlobalData.p2_character == "Kismet":
+		#if button pressed then insert specific character anims
+		var kismet_instance = kismet.instantiate()
+		$player2_LOADEDANIMS.add_child(kismet_instance)
+		#grab the animation hitboxes
+		kismet_instance.get_node("FrameData").collision_layer = 2
+		#kismet_instance.get_node("FrameData2").collision_layer = 2
+		#kismet_instance.get_node("FrameDataSpecial1").collision_layer = 2
+		#kismet_instance.get_node("FrameDataSpecial2").collision_layer = 2
+		#kismet_instance.get_node("FrameDataSpecial3").collision_layer = 2
+		#get_node("Hurtbox").collision_mask = 4
 
 func insert_player_stocks():
 	#if charactar selction button pressed 

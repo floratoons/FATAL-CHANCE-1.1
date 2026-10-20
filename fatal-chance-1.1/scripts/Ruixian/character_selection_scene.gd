@@ -5,6 +5,7 @@ extends Node2D
 @onready var p2_label = $P2Label
 @onready var card1 = $HorisontalUI/Control/CharacterCard1
 @onready var card2 = $HorisontalUI/Control/CharacterCard2
+@onready var card3 = $HorisontalUI/Control/CharacterCard3
 
 # Indicator that follows the mouse when hovering
 @onready var indicator = $PlayerIndicator
@@ -17,6 +18,7 @@ extends Node2D
 
 @onready var border1 = $HorisontalUI/Control/CharacterCard1/Border
 @onready var border2 = $HorisontalUI/Control/CharacterCard2/Border
+@onready var border3 = $HorisontalUI/Control/CharacterCard3/Border
 
 #Animation of the Text
 @onready var text_slide_anim = $TextSlideInAnimationPlayer
@@ -24,6 +26,7 @@ extends Node2D
 #characters to load
 var anathema = preload("res://scenes/anathema_anims.tscn")
 var talisman = preload("res://scenes/talisman_anims.tscn")
+var kismet = preload("res://scenes/kismet_anims.tscn")
 var player_not_selected = false
 
 # Whose turn it is: 1=P1, 2=P2, 0=both done
@@ -74,8 +77,11 @@ func _ready():
 	card1.mouse_exited.connect(_on_card_hover_exit)
 	card2.mouse_entered.connect(_on_card2_hover_enter)
 	card2.mouse_exited.connect(_on_card_hover_exit)
+	card3.mouse_entered.connect(_on_card3_hover_enter)
+	card3.mouse_exited.connect(_on_card_hover_exit)
 	card1.pressed.connect(_on_card1_pressed)
 	card2.pressed.connect(_on_card2_pressed)
+	card3.pressed.connect(_on_card3_pressed)
 	
 	#Animation
 	text_slide_anim.play("Slide In")
@@ -100,17 +106,51 @@ func _process(delta):
 		locked_indicator2.position.y = locked_base_y2 + sin(locked_bounce_time2) * 8.0
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("left_p1"):
-		print("called")
-		$HorisontalUI.selected_index -= 1
-		if $HorisontalUI.selected_index < 0:
-			$HorisontalUI.selected_index = 5
-	if Input.is_action_just_pressed("right_p1"):
-		print("called")
-		$HorisontalUI.selected_index += 1
-		#can change to 6 later
-		if $HorisontalUI.selected_index > 5:
-			$HorisontalUI.selected_index = 0
+	if current_turn == 1:
+		if Input.is_action_just_pressed("left_p1"):
+			print("called")
+			$HorisontalUI.selected_index -= 1
+			if $HorisontalUI.selected_index < 0:
+				$HorisontalUI.selected_index = 5
+		if Input.is_action_just_pressed("right_p1"):
+			print("called")
+			$HorisontalUI.selected_index += 1
+			#can change to 6 later
+			if $HorisontalUI.selected_index > 5:
+				$HorisontalUI.selected_index = 0
+	if current_turn == 2:
+		if Input.is_action_just_pressed("left_p2"):
+			print("called")
+			$HorisontalUI.selected_index -= 1
+			if $HorisontalUI.selected_index < 0:
+				$HorisontalUI.selected_index = 5
+		if Input.is_action_just_pressed("right_p2"):
+			print("called")
+			$HorisontalUI.selected_index += 1
+			#can change to 6 later
+			if $HorisontalUI.selected_index > 5:
+				$HorisontalUI.selected_index = 0
+#anathema
+	if $HorisontalUI.selected_index == 1:
+		_on_card1_hover_enter()
+		if $HorisontalUI.selected_index == 1 && Input.is_action_just_pressed("select"):
+			_on_card1_pressed()
+	else:
+		_on_card_hover_exit()
+##talisman
+	if $HorisontalUI.selected_index == 2:
+		_on_card2_hover_enter()
+		if $HorisontalUI.selected_index == 2 && Input.is_action_just_pressed("select"):
+			_on_card2_pressed()
+	else:
+		_on_card_hover_exit()
+#kismet
+	if $HorisontalUI.selected_index == 3:
+		_on_card3_hover_enter()
+		if $HorisontalUI.selected_index == 3 && Input.is_action_just_pressed("select"):
+			_on_card3_pressed()
+	else:
+		_on_card_hover_exit()
 
 # Returns the position just above the center of a card, for placing indicators
 func _get_card_top_center(card: TextureButton) -> Vector2:
@@ -135,9 +175,9 @@ func _on_card1_hover_enter():
 		indicator.add_theme_color_override("font_color", Color(0.996, 0.0, 0.941))
 		_set_border(border1, Color(0.996, 0.0, 0.941))
 		#adds the char sprite to the side
-		var anathema_instance = anathema.instantiate()
-		$P1Marker.add_child(anathema_instance)
-		$P1Marker/Sprite2D/AnimationPlayer.play("idle")
+		#var anathema_instance = anathema.instantiate()
+		#$P1Marker.add_child(anathema_instance)
+		#$P1Marker/Sprite2D/AnimationPlayer.play("idle")
 		#starts character splash flicker
 		$SplashAnimationPlayer.play("anathema1_flicker")
 	elif current_turn == 2:
@@ -145,10 +185,10 @@ func _on_card1_hover_enter():
 		indicator.add_theme_color_override("font_color", Color(1, 0.9, 0.0))
 		_set_border(border1, Color(1, 0.9, 0.0))
 		#adds the char sprite to the side
-		var anathema_instance = anathema.instantiate()
-		$P2Marker.add_child(anathema_instance)
-		anathema_instance.scale.x = -1
-		$P2Marker/Sprite2D/AnimationPlayer.play("idle")
+		#var anathema_instance = anathema.instantiate()
+		#$P2Marker.add_child(anathema_instance)
+		#anathema_instance.scale.x = -1
+		#$P2Marker/Sprite2D/AnimationPlayer.play("idle")
 		$SplashAnimationPlayer.play("anathema2_flicker")
 
 # When mouse enters card2
@@ -167,20 +207,51 @@ func _on_card2_hover_enter():
 		indicator.add_theme_color_override("font_color", Color(0.996, 0.0, 0.941))
 		_set_border(border2, Color(0.996, 0.0, 0.941))
 		#add char sprite to side
-		var talisman_instance = talisman.instantiate()
-		$P1Marker.add_child(talisman_instance)
-		$P1Marker/Sprite2D/AnimationPlayer.play("idle")
+		#var talisman_instance = talisman.instantiate()
+		#$P1Marker.add_child(talisman_instance)
+		#$P1Marker/Sprite2D/AnimationPlayer.play("idle")
 		$SplashAnimationPlayer.play("talisman1_flicker")
 	elif current_turn == 2:
 		indicator.text = "P2"
 		indicator.add_theme_color_override("font_color", Color(1, 0.9, 0.0))
 		_set_border(border2, Color(1, 0.9, 0.0))
 		#add char sprite
-		var talisman_instance = talisman.instantiate()
-		$P2Marker.add_child(talisman_instance)
-		talisman_instance.scale.x = -1
-		$P2Marker/Sprite2D/AnimationPlayer.play("idle")
+		#var talisman_instance = talisman.instantiate()
+		#$P2Marker.add_child(talisman_instance)
+		#talisman_instance.scale.x = -1
+		#$P2Marker/Sprite2D/AnimationPlayer.play("idle")
 		$SplashAnimationPlayer.play("talisman2_flicker")
+
+func _on_card3_hover_enter():
+	# If P1 already locked card1, P2 hovering does nothing
+	if current_turn == 2 and p1_choice == "Kismet":
+		return
+	is_hovering = true
+	bounce_time = 0.0
+	indicator.visible = true
+	indicator.position = _get_card_top_center(card3)
+	base_y = indicator.position.y
+	# Show indicator and border in the current player's color
+	if current_turn == 1:
+		indicator.text = "P1"
+		indicator.add_theme_color_override("font_color", Color(0.996, 0.0, 0.941))
+		_set_border(border3, Color(0.996, 0.0, 0.941))
+		#adds the char sprite to the side
+		#var kismet_instance = kismet.instantiate()
+		#$P1Marker.add_child(kismet_instance)
+		#$P1Marker/Sprite2D/AnimationPlayer.play("idle")
+		#starts character splash flicker
+		#$SplashAnimationPlayer.play("anathema1_flicker")
+	elif current_turn == 2:
+		indicator.text = "P2"
+		indicator.add_theme_color_override("font_color", Color(1, 0.9, 0.0))
+		_set_border(border3, Color(1, 0.9, 0.0))
+		#adds the char sprite to the side
+		#var kismet_instance = kismet.instantiate()
+		#$P2Marker.add_child(kismet_instance)
+		#kismet_instance.scale.x = -1
+		#$P2Marker/Sprite2D/AnimationPlayer.play("idle")
+		#$SplashAnimationPlayer.play("anathema2_flicker")
 
 # When mouse exits any card
 func _on_card_hover_exit():
@@ -191,20 +262,28 @@ func _on_card_hover_exit():
 		border1.visible = false
 	if p1_choice != "Talisman" and p2_choice != "Talisman":
 		border2.visible = false
+	if p1_choice != "Kismet" and p2_choice != "Kismet":
+		border3.visible = false
 	#sets up sprite deletion when not hovering on a card
 	if current_turn == 1:
 		if p1_choice != "Anathema" and p2_choice != "Anathema":
-			$P1Marker/Sprite2D.queue_free()
+			#$P1Marker/Sprite2D.queue_free()
 			$SplashAnimationPlayer.play("p1_default")
 		if p1_choice != "Talisman" and p2_choice != "Talisman":
-			$P1Marker/Sprite2D.queue_free()
+			#$P1Marker/Sprite2D.queue_free()
+			$SplashAnimationPlayer.play("p1_default")
+		if p1_choice != "Kismet" and p2_choice != "Kismet":
+			#$P1Marker/Sprite2D.queue_free()
 			$SplashAnimationPlayer.play("p1_default")
 	if current_turn == 2 and $P2Marker.get_child_count() == 1:
 		if p1_choice != "Anathema" and p2_choice != "Anathema":
-			$P2Marker/Sprite2D.queue_free()
+			#$P2Marker/Sprite2D.queue_free()
 			$SplashAnimationPlayer.play("p2_default")
 		if p1_choice != "Talisman" and p2_choice != "Talisman":
-			$P2Marker/Sprite2D.queue_free()
+			#$P2Marker/Sprite2D.queue_free()
+			$SplashAnimationPlayer.play("p2_default")
+		if p1_choice != "Kismet" and p2_choice != "Kismet":
+			#$P2Marker/Sprite2D.queue_free()
 			$SplashAnimationPlayer.play("p2_default")
 
 # Creates a StyleBox with a colored border and transparent background, applies it to a Panel
@@ -233,6 +312,12 @@ func _on_card2_pressed():
 	$Talisman.play()
 	_select_character("Talisman")
 
+# Card3 clicked, select character 3
+func _on_card3_pressed():
+	$ClickSound.play()
+	#$Kismet.play()
+	_select_character("Kismet")
+
 func _select_character(character_name: String):
 	if current_turn == 1:
 		# P1 selects a character, record choice, update labels, switch turn to P2
@@ -242,22 +327,30 @@ func _select_character(character_name: String):
 		current_turn = 2
 		#adds the char sprite to the side
 		if character_name == "Anathema":
-			$P1Marker/Sprite2D.queue_free()
-			await get_tree().create_timer(0.2).timeout
-			var anathema_instance = anathema.instantiate()
-			$P1Marker.add_child(anathema_instance)
-			$P1Marker/Sprite2D/AnimationPlayer.play("idle")
+			#$P1Marker/Sprite2D.queue_free()
+			#await get_tree().create_timer(0.2).timeout
+			#var anathema_instance = anathema.instantiate()
+			#$P1Marker.add_child(anathema_instance)
+			#$P1Marker/Sprite2D/AnimationPlayer.play("idle")
 			$SplashAnimationPlayer.play("anathema1_select")
 		if character_name == "Talisman":
-			$P1Marker/Sprite2D.queue_free()
-			await get_tree().create_timer(0.2).timeout
-			var talisman_instance = talisman.instantiate()
-			$P1Marker.add_child(talisman_instance)
-			$P1Marker/Sprite2D/AnimationPlayer.play("idle")
+			#$P1Marker/Sprite2D.queue_free()
+			#await get_tree().create_timer(0.2).timeout
+			#var talisman_instance = talisman.instantiate()
+			#$P1Marker.add_child(talisman_instance)
+			#$P1Marker/Sprite2D/AnimationPlayer.play("idle")
 			$SplashAnimationPlayer.play("talisman1_select")
+		if character_name == "Kismet":
+			#$P1Marker/Sprite2D.queue_free()
+			#await get_tree().create_timer(0.2).timeout
+			#var kismet_instance = kismet.instantiate()
+			#$P1Marker.add_child(kismet_instance)
+			#$P1Marker/Sprite2D/AnimationPlayer.play("idle")
+			print("selected kismet")
+			#$SplashAnimationPlayer.play("kismet1_select")
 		# Find the card and border that P1 selected
-		var selected_card = card1 if character_name == "Anathema" else card2
-		var selected_border = border1 if character_name == "Anathema" else border2
+		var selected_card = card1 if character_name == "Anathema" else card2 if character_name == "Talisman" else card3 
+		var selected_border = border1 if character_name == "Anathema" else border2 if character_name == "Talisman" else border3
 		# Lock red border on selected card
 		_set_border(selected_border, Color(0.996, 0.0, 0.941))
 		# Lock P1 indicator above selected card
@@ -273,31 +366,38 @@ func _select_character(character_name: String):
 		# P2 cannot pick the same character as P1
 		if character_name == p1_choice:
 			p2_label.text = "P2: Please select a different character!"
-			return
 		# P2 selects a character, record choice, update labels
 		p2_choice = character_name
 		p2_label.text = "P2: ✓ " + character_name
 		current_turn = 0
 		#adds the char sprite to the side & splash select
 		if character_name == "Anathema":
-			$P2Marker/Sprite2D.queue_free()
-			await get_tree().create_timer(0.2).timeout
-			var anathema_instance = anathema.instantiate()
-			$P2Marker.add_child(anathema_instance)
-			anathema_instance.scale.x = -1
-			$P2Marker/Sprite2D/AnimationPlayer.play("idle")
+			#$P2Marker/Sprite2D.queue_free()
+			#await get_tree().create_timer(0.2).timeout
+			#var anathema_instance = anathema.instantiate()
+			#$P2Marker.add_child(anathema_instance)
+			#anathema_instance.scale.x = -1
+			#$P2Marker/Sprite2D/AnimationPlayer.play("idle")
 			$SplashAnimationPlayer.play("anathema2_select")
 		if character_name == "Talisman":
-			$P2Marker/Sprite2D.queue_free()
-			await get_tree().create_timer(0.2).timeout
-			var talisman_instance = talisman.instantiate()
-			$P2Marker.add_child(talisman_instance)
-			talisman_instance.scale.x = -1
-			$P2Marker/Sprite2D/AnimationPlayer.play("idle")
+			#$P2Marker/Sprite2D.queue_free()
+			#await get_tree().create_timer(0.2).timeout
+			#var talisman_instance = talisman.instantiate()
+			#$P2Marker.add_child(talisman_instance)
+			#talisman_instance.scale.x = -1
+			#$P2Marker/Sprite2D/AnimationPlayer.play("idle")
 			$SplashAnimationPlayer.play("talisman2_select")
+		if character_name == "Kismet":
+			#$P2Marker/Sprite2D.queue_free()
+			#await get_tree().create_timer(0.2).timeout
+			#var kismet_instance = kismet.instantiate()
+			#$P2Marker.add_child(kismet_instance)
+			#$P2Marker/Sprite2D/AnimationPlayer.play("idle")
+			print("selected kismet")
+			#$SplashAnimationPlayer.play("kismet2_select")
 		# Find the card and border that P2 selected
-		var selected_card = card1 if character_name == "Anathema" else card2
-		var selected_border = border1 if character_name == "Anathema" else border2
+		var selected_card = card1 if character_name == "Anathema" else card2 if character_name == "Talisman" else card3
+		var selected_border = border1 if character_name == "Anathema" else border2 if character_name == "Talisman" else border3
 		# Lock yellow border on selected card
 		_set_border(selected_border, Color(1, 0.9, 0.0))
 		# Lock P2 indicator above selected card
@@ -310,8 +410,10 @@ func _select_character(character_name: String):
 		is_hovering = false
 		indicator.visible = false
 		# Wait 1.8 seconds then go to map selection
+		print("timer START")
 		await get_tree().create_timer(1.8).timeout
 		_go_to_map_selection()
+		print("GO TO NEXT BULLSHIT")
 
 # Save both players' choices to GlobalData and switch to the map selection scene
 func _go_to_map_selection():

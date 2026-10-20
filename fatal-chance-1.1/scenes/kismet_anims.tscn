@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://cdra6accyalp7" path="res://scripts/frame_data.gd" id="3_jyu70"]
 [ext_resource type="Texture2D" uid="uid://d28yr0po1x8u5" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_walk_2.PNG" id="4_b0o4h"]
 
+[sub_resource type="Animation" id="Animation_b0o4h"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_7jfvw"]
 resource_name = "idle"
 loop_mode = 1
@@ -22,21 +25,6 @@ tracks/0/keys = {
 "values": [ExtResource("2_gluef"), ExtResource("1_ydvvx"), ExtResource("2_gluef"), ExtResource("1_ydvvx"), ExtResource("2_gluef")]
 }
 
-[sub_resource type="Animation" id="Animation_b0o4h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_ydvvx")]
-}
-
 [sub_resource type="Animation" id="Animation_bb6mi"]
 resource_name = "jump"
 
@@ -50,10 +38,10 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 0.4, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_7jfvw"), ExtResource("4_b0o4h"), ExtResource("3_7jfvw"), ExtResource("4_b0o4h")]
+"values": [ExtResource("3_7jfvw"), ExtResource("4_b0o4h"), ExtResource("3_7jfvw"), ExtResource("4_b0o4h"), ExtResource("3_7jfvw"), ExtResource("4_b0o4h")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1g15b"]
@@ -65,13 +53,30 @@ _data = {
 }
 
 [node name="Sprite2D" type="Sprite2D"]
-texture = ExtResource("1_ydvvx")
+position = Vector2(0, -45)
+texture = ExtResource("3_7jfvw")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["animationplayer"]]
 libraries = {
 &"": SubResource("AnimationLibrary_1g15b")
 }
 
 [node name="FrameData" type="Area2D" parent="."]
+script = ExtResource("3_jyu70")
+metadata/_custom_type_script = "uid://cdra6accyalp7"
+
+[node name="FrameData2" type="Area2D" parent="."]
+script = ExtResource("3_jyu70")
+metadata/_custom_type_script = "uid://cdra6accyalp7"
+
+[node name="FrameDataSpecial1" type="Area2D" parent="."]
+script = ExtResource("3_jyu70")
+metadata/_custom_type_script = "uid://cdra6accyalp7"
+
+[node name="FrameDataSpecial2" type="Area2D" parent="."]
+script = ExtResource("3_jyu70")
+metadata/_custom_type_script = "uid://cdra6accyalp7"
+
+[node name="FrameDataSpecial3" type="Area2D" parent="."]
 script = ExtResource("3_jyu70")
 metadata/_custom_type_script = "uid://cdra6accyalp7"
