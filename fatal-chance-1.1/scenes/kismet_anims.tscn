@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b6gmefskwdvcf"]
+[gd_scene load_steps=37 format=3 uid="uid://b6gmefskwdvcf"]
 
 [ext_resource type="Texture2D" uid="uid://jwlwx7rg0qeo" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_idle_2.PNG" id="1_ydvvx"]
 [ext_resource type="Texture2D" uid="uid://c53uvr5lomt7n" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_idle_1.PNG" id="2_gluef"]
@@ -8,6 +8,21 @@
 [ext_resource type="Texture2D" uid="uid://cynyur8cu32lx" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_jump_2.PNG" id="4_i41w0"]
 [ext_resource type="Texture2D" uid="uid://bkrvyn1vnvdxq" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_jump_3.PNG" id="5_1g15b"]
 [ext_resource type="Texture2D" uid="uid://dvys0yym6fk2x" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_jump_4.PNG" id="6_ssq2m"]
+[ext_resource type="Texture2D" uid="uid://chq7clk2qvaqj" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_crouch_2.PNG" id="8_1g15b"]
+[ext_resource type="Texture2D" uid="uid://bxqhripewd55" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_crouch_1.PNG" id="9_ssq2m"]
+[ext_resource type="Texture2D" uid="uid://cm1etuw61rlv1" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack1_1.PNG" id="10_pxgxb"]
+[ext_resource type="Texture2D" uid="uid://d0u0mxtbr0irr" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack1_2.PNG" id="11_h6raf"]
+[ext_resource type="Texture2D" uid="uid://crn4ffm8st3l5" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack1_3.PNG" id="12_epsxe"]
+[ext_resource type="Texture2D" uid="uid://cxx3xupt0tkfg" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack1_4.PNG" id="13_tsdqt"]
+[ext_resource type="Texture2D" uid="uid://b5omcskl440gb" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack2_1.PNG" id="14_yc7xy"]
+[ext_resource type="Texture2D" uid="uid://bm6uevvh82o60" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack2_2.PNG" id="15_feflk"]
+[ext_resource type="Texture2D" uid="uid://dayt4t6l4yhos" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack2_3.PNG" id="16_xhxo4"]
+[ext_resource type="Texture2D" uid="uid://dlupm6ypi0utg" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack2_4.PNG" id="17_b6e6e"]
+[ext_resource type="Texture2D" uid="uid://bnksnd56f7l2m" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack2_5.PNG" id="18_rgl54"]
+[ext_resource type="Texture2D" uid="uid://dhbni5djd51wk" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack2_6.PNG" id="19_dv25o"]
+[ext_resource type="Texture2D" uid="uid://bqhcy6gqaypfp" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_stanceswitch_1.PNG" id="20_b6e6e"]
+[ext_resource type="Texture2D" uid="uid://g7ngna3tlclu" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_stanceswitch_2.PNG" id="21_rgl54"]
+[ext_resource type="Texture2D" uid="uid://bptd44836lme8" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_stanceswitch_3.PNG" id="22_dv25o"]
 
 [sub_resource type="Animation" id="Animation_b0o4h"]
 length = 0.001
@@ -22,6 +37,78 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("3_7jfvw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FrameData/A1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FrameData/A1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(76, 121.99999)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FrameData/A1:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.63539475]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FrameData2/B1:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FrameData2/B1:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(78, 124)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("FrameData2/B1:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.60598254]
 }
 
 [sub_resource type="Animation" id="Animation_7jfvw"]
@@ -72,13 +159,195 @@ tracks/0/keys = {
 "values": [ExtResource("3_7jfvw"), ExtResource("4_b0o4h"), ExtResource("3_7jfvw"), ExtResource("4_b0o4h"), ExtResource("3_7jfvw"), ExtResource("4_b0o4h")]
 }
 
+[sub_resource type="Animation" id="Animation_ogpe3"]
+resource_name = "crouch"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("8_1g15b"), ExtResource("9_ssq2m")]
+}
+
+[sub_resource type="Animation" id="Animation_1w1vg"]
+resource_name = "A1"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_pxgxb"), ExtResource("11_h6raf"), ExtResource("12_epsxe"), ExtResource("13_tsdqt"), ExtResource("10_pxgxb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FrameData/A1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FrameData/A1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(76, 121.99999), Vector2(157, 18.999977), Vector2(73.999985, 122)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FrameData/A1:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.63539475, -1.5399666, -0.5912296]
+}
+
+[sub_resource type="Animation" id="Animation_sw5pi"]
+resource_name = "B1"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("14_yc7xy"), ExtResource("15_feflk"), ExtResource("16_xhxo4"), ExtResource("17_b6e6e"), ExtResource("18_rgl54"), ExtResource("19_dv25o"), ExtResource("19_dv25o")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FrameData2/B1:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, false, false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FrameData2/B1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(78, 124), Vector2(129, 138), Vector2(129, 138), Vector2(160, -100), Vector2(134, 133), Vector2(134, 133)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FrameData2/B1:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.60598254, -0.96726185, -0.96726185, -2.2074924, -0.8841301, -0.8841301]
+}
+
+[sub_resource type="Animation" id="Animation_4fgxw"]
+resource_name = "S1"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("20_b6e6e"), ExtResource("21_rgl54"), ExtResource("22_dv25o")]
+}
+
+[sub_resource type="Animation" id="Animation_2dk7s"]
+resource_name = "S2"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("20_b6e6e"), ExtResource("21_rgl54"), ExtResource("22_dv25o")]
+}
+
+[sub_resource type="Animation" id="Animation_4bxig"]
+resource_name = "S3"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("20_b6e6e"), ExtResource("21_rgl54"), ExtResource("22_dv25o")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1g15b"]
 _data = {
+&"A1": SubResource("Animation_1w1vg"),
+&"B1": SubResource("Animation_sw5pi"),
 &"RESET": SubResource("Animation_b0o4h"),
+&"S1": SubResource("Animation_4fgxw"),
+&"S2": SubResource("Animation_2dk7s"),
+&"S3": SubResource("Animation_4bxig"),
+&"crouch": SubResource("Animation_ogpe3"),
 &"idle": SubResource("Animation_7jfvw"),
 &"jump": SubResource("Animation_bb6mi"),
 &"walk": SubResource("Animation_i41w0")
 }
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxgxb"]
+radius = 8.0
+height = 150.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4fgxw"]
+radius = 7.5559998
+height = 138.73138
 
 [node name="Sprite2D" type="Sprite2D"]
 position = Vector2(0, -85)
@@ -91,11 +360,28 @@ libraries = {
 
 [node name="FrameData" type="Area2D" parent="."]
 script = ExtResource("3_jyu70")
+damage = 3
+knockback_force = 800
 metadata/_custom_type_script = "uid://cdra6accyalp7"
+
+[node name="A1" type="CollisionShape2D" parent="FrameData"]
+position = Vector2(76, 121.99999)
+rotation = -0.63539475
+shape = SubResource("CapsuleShape2D_pxgxb")
+disabled = true
+debug_color = Color(3.946722e-06, 0.6032858, 0.6826914, 0.41960785)
 
 [node name="FrameData2" type="Area2D" parent="."]
 script = ExtResource("3_jyu70")
+damage = 6
+knockback_force = 1400
 metadata/_custom_type_script = "uid://cdra6accyalp7"
+
+[node name="B1" type="CollisionShape2D" parent="FrameData2"]
+position = Vector2(78, 124)
+rotation = -0.60598254
+shape = SubResource("CapsuleShape2D_4fgxw")
+disabled = true
 
 [node name="FrameDataSpecial1" type="Area2D" parent="."]
 script = ExtResource("3_jyu70")

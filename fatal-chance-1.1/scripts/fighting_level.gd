@@ -275,16 +275,12 @@ func check_for_slots():
 		p_1.slots_have_rolled = false
 		soul_meter_animation_player.stop()
 		$CanvasLayer/SoulMeterFullP1.hide()
-		
-		pass
 	if p_2.slots_have_rolled == true:
 		p_1.soul_meter.value = 0
 		p_2.can_use_slot = false
-		p_1.slots_have_rolled = false
+		p_2.slots_have_rolled = false
 		soul_meter_animation_player.stop()
 		$CanvasLayer/SoulMeterFullP2.hide()
-		
-	pass
 
 func sticker_reset():
 	p_1.hits_in_a_row = 0

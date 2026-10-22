@@ -11,7 +11,7 @@ var talisman_stocks = preload("res://scenes/UI/TalismanStocks.tscn")
 
 var anathema_reel = preload("res://assets/prototype_reel.png")
 var talisman_reel = preload("res://assets/talisman_reel.png")
-#var kismet_reel
+var kismet_reel = preload("res://assets/MainFightUI/simple_slot.png")
 
 var animation_player
 var special_damage
@@ -271,6 +271,20 @@ func roll_slots():
 			print(special_damage)
 			special_attack_assign()
 			#$player1_LOADEDANIMS/Sprite2D/FrameData.damage = special_damage
+		if GlobalData.p1_character == "Kismet":
+			print("kismet rolled")
+			s1[0].material.set_shader_parameter('tex', kismet_reel)
+			s2[0].material.set_shader_parameter('tex', kismet_reel)
+			s3[0].material.set_shader_parameter('tex', kismet_reel)
+			slot_machine.spin()
+			print("Roll Slots")
+			#changes the special damage to be whatever combo is rolled from the slots
+			special_damage = slot_machine.check_rolls()
+			#assigning a number value to each attack to later check if special_attack is that value to then activate the bool to attack
+			special_attack = slot_machine.check_attack()
+			print(special_damage)
+			special_attack_assign()
+			#$player1_LOADEDANIMS/Sprite2D/FrameData.damage = special_damage
 
 func special_attack_assign():
 	if special_attack == 0:
@@ -314,10 +328,10 @@ func insert_player_anims():
 		$player1_LOADEDANIMS.add_child(kismet_instance)
 		#grab the animation hitboxes
 		kismet_instance.get_node("FrameData").collision_layer = 4
-		#kismet_instance.get_node("FrameData2").collision_layer = 4
-		#kismet_instance.get_node("FrameDataSpecial1").collision_layer = 4
-		#kismet_instance.get_node("FrameDataSpecial2").collision_layer = 4
-		#kismet_instance.get_node("FrameDataSpecial3").collision_layer = 4
+		kismet_instance.get_node("FrameData2").collision_layer = 4
+		kismet_instance.get_node("FrameDataSpecial1").collision_layer = 4
+		kismet_instance.get_node("FrameDataSpecial2").collision_layer = 4
+		kismet_instance.get_node("FrameDataSpecial3").collision_layer = 4
 
 func insert_player_stocks():
 	#if character selction button pressed 
@@ -325,6 +339,8 @@ func insert_player_stocks():
 		stocks = anathema_stocks.instantiate()
 	if GlobalData.p1_character == "Talisman":
 		stocks = talisman_stocks.instantiate()
+	if GlobalData.p1_character == "Kismet":
+		stocks = anathema_stocks.instantiate()
 
 	
 	stock_marker.add_child(stocks)
@@ -332,6 +348,7 @@ func insert_player_stocks():
 func send_damage(amount: int) -> void:
 	if crouching:
 		animation_player.stop
+		Log.print("BLOCKED")
 		can_crouch = false
 		crouching = false
 	else:
