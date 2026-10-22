@@ -173,6 +173,8 @@ func _physics_process(delta: float) -> void:
 			velocity.x = dir * knockback_force
 			print(velocity.x)
 			print(knockback_force)
+			Log.print("P2 Knockback Force:")
+			Log.print(str(knockback_force))
 			damaged = false
 
 	move_and_slide()
@@ -258,16 +260,19 @@ func special_attack_assign():
 	if special_attack == 0:
 		can_special1 = true
 		print("canS1")
+		Log.print("can special 1")
 		print(can_special1)
 		$player2_LOADEDANIMS/Sprite2D/FrameDataSpecial1.damage = special_damage
 	if special_attack == 1:
 		can_special2 = true
 		print("canS2")
+		Log.print("can special 2")
 		print(can_special2)
 		$player2_LOADEDANIMS/Sprite2D/FrameDataSpecial2.damage = special_damage
 	if special_attack == 2:
 		can_special3 = true
 		print("canS3")
+		Log.print("can special 3")
 		print(can_special3)
 		$player2_LOADEDANIMS/Sprite2D/FrameDataSpecial3.damage = special_damage
 
@@ -304,7 +309,7 @@ func insert_player_anims():
 		#kismet_instance.get_node("FrameDataSpecial1").collision_layer = 2
 		#kismet_instance.get_node("FrameDataSpecial2").collision_layer = 2
 		#kismet_instance.get_node("FrameDataSpecial3").collision_layer = 2
-		#get_node("Hurtbox").collision_mask = 4
+		get_node("Hurtbox").collision_mask = 4
 
 func insert_player_stocks():
 	#if charactar selction button pressed 
@@ -323,6 +328,8 @@ func send_damage(amount: int) -> void:
 	else:
 		damaged = true
 		p_2_current_health -= amount
+		Log.print("P1 DMG: ")
+		Log.print(str(amount))
 		soul_meter.value += amount * 2.5
 		
 		hits_in_a_row += 1

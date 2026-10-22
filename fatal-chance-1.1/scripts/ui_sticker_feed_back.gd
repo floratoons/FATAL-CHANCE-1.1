@@ -60,7 +60,7 @@ func add_sticker_p_2(feedback : String):
 	
 	p_2_sticker_path.progress_ratio = 0
 	p_2_sticker_path.add_child(temp_sticker)
-	print(temp_sticker.rotation)
+	#print(temp_sticker.rotation)
 	
 	animator.play("p_2_sticker_slam")
 	pass

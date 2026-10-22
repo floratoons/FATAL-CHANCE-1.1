@@ -3,9 +3,11 @@ extends Node
 @onready var text = $TimerText
 @onready var timer = $RoundTimer
 
-var time
+var time = 100
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pass
 	assign_time()
 
 # different timer for fighting vs training level

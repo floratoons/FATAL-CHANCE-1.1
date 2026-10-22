@@ -8,9 +8,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ce34"]
 shader = ExtResource("2_xv1v6")
-shader_parameter/outline_color = Color(0.21176471, 1, 1, 1)
-shader_parameter/thickness = 34.30000051111116
-shader_parameter/sample_count = 44
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/thickness = 1.0
+shader_parameter/sample_count = 8
 shader_parameter/inner_outline = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7tig7"]

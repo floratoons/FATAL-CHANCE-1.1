@@ -20,6 +20,7 @@ config/icon="uid://closo7ks1nyeq"
 GlobalData="*res://scripts/Ruixian/GlobalData.gd"
 SceneTransition="*res://Scenes/Ruixian/scene_transition.tscn"
 BgmPlayer="*res://music_sfx/bgm_player.tscn"
+Log="*res://scripts/Log.gd"
 
 [display]
 

@@ -108,7 +108,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump_p1") and is_on_floor() and not attacking:
 		velocity.y = JUMP_VELOCITY
 		jumping = true
-		can_dash = true
+		#can_dash = true
 		animation_player.play("jump")
 
 #attack functions
@@ -154,8 +154,13 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		if dashing:
 			velocity.x = direction * DASH_SPEED
+		if jumping:
+			##clamp the speed in the air
+			velocity.x = direction * 100
 		else:
 			velocity.x = direction * SPEED
+			print(velocity.x)
+			print(direction)
 			moving = true
 			if damaged and moving:
 				print("knockback")
@@ -176,6 +181,8 @@ func _physics_process(delta: float) -> void:
 			velocity.x = dir * knockback_force
 			print(velocity.x)
 			print(knockback_force)
+			Log.print("P1 Knockback Force:")
+			Log.print(str(knockback_force))
 			damaged = false
 
 	move_and_slide()
@@ -194,16 +201,20 @@ func crouch():
 	print("can crouch")
 
 func dash():
-	if Input.is_action_just_pressed("left_p1") and jumping and can_dash:
+	if Input.is_action_just_pressed("left_p1") and can_dash:
 		dashing = true
 		can_dash = false
 		await get_tree().create_timer(0.3).timeout
 		dashing = false
-	if Input.is_action_just_pressed("right_p1") and jumping and can_dash:
+		await get_tree().create_timer(5).timeout
+		can_dash = true
+	if Input.is_action_just_pressed("right_p1") and can_dash:
 		dashing = true
 		can_dash = false
 		await get_tree().create_timer(0.3).timeout
 		dashing = false
+		await get_tree().create_timer(5).timeout
+		can_dash = true
 
 func attack_timer(cooldown : int):
 	can_attack1 = false
@@ -235,7 +246,7 @@ func roll_slots():
 		print(is_combo)
 		var s1 = get_tree().get_nodes_in_group("slot1")
 		var s2 = get_tree().get_nodes_in_group("slot2")
-		var s3 = get_tree().get_nodes_in_group("slot3") 
+		var s3 = get_tree().get_nodes_in_group("slot3")
 		if GlobalData.p1_character == "Anathema":
 			s1[0].material.set_shader_parameter('tex', anathema_reel)
 			s2[0].material.set_shader_parameter('tex', anathema_reel)
@@ -327,6 +338,8 @@ func send_damage(amount: int) -> void:
 		damaged = true
 		print("damaged: ", damaged)
 		p_1_current_health -= amount
+		Log.print("P2 DMG: ")
+		Log.print(str(amount))
 		soul_meter.value += amount * 2.5
 		print("Damage: ", amount)
 		print("p_1current_health: ", + p_1_current_health)

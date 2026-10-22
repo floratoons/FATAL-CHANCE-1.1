@@ -24,6 +24,10 @@ var player2_instance
 @onready var soul_meter_animation_player = $SoulMeterAnimationPlayer
 @onready var pause_screen = $CanvasLayer/PauseScreen
 
+#debugs
+@onready var debug_p1_dmg = $"CanvasLayer/DEBUGS/P1 DMG"
+@onready var debug_p2_dmg = $"CanvasLayer/DEBUGS/P2 DMG"
+
 var round_counter = 0
 
 func _ready() -> void:
@@ -37,6 +41,7 @@ func _ready() -> void:
 	#add_child(instance)
 	var player1_pos = p_1.global_position
 	instance.global_position = player1_pos
+	
 	
 	print("p_1 name: " + p_1.name)
 	
