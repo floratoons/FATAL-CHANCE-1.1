@@ -3,6 +3,7 @@ extends Area2D
 
 @export var damage : int
 @export var knockback_force : int
+@export var knockup_force : int
 
 func _init() -> void:
 	#sets the hitbox to layer 2, which will be our hitbox layer

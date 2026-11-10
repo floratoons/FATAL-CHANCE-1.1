@@ -1,7 +1,10 @@
-[gd_resource type="Resource" script_class="characters" load_steps=2 format=3 uid="uid://c7sfqt247t3as"]
+[gd_resource type="Resource" script_class="characters" load_steps=3 format=3 uid="uid://c7sfqt247t3as"]
 
 [ext_resource type="Script" uid="uid://da0av2hol0134" path="res://scripts/CharacterResources/Character_Resource.gd" id="1_5r50n"]
+[ext_resource type="PackedScene" uid="uid://b1wj4xrgyncn4" path="res://scenes/anathema_anims.tscn" id="1_ue66s"]
 
 [resource]
 script = ExtResource("1_5r50n")
+character_name = "Anathema"
+anim_scene = ExtResource("1_ue66s")
 metadata/_custom_type_script = "uid://da0av2hol0134"

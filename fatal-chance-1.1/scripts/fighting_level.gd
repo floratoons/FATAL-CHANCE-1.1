@@ -36,10 +36,10 @@ func _ready() -> void:
 	p_2 = get_tree().get_first_node_in_group("p_2")
 	#instantiate camera to the p_1 in the tree
 	var instance = mainCam.instantiate()
-	p_1.add_child(instance)
+	add_child(instance)
 	#add_child(instance)
-	var player1_pos = p_1.global_position
-	instance.global_position = player1_pos
+	#var player1_pos = p_1.global_position
+	#instance.global_position = player1_pos
 	
 	print("p_1 name: " + p_1.name)
 	

@@ -32,6 +32,7 @@ var slots_have_rolled = false
 @export var health: int = 100
 @export var p_2_current_health: int
 @export var knockback_force: int
+@export var knockback_dir: Vector2
 
 @onready var p_1_combo_timer = $p_1ComboTimer
 var hits_in_a_row = 0
@@ -43,8 +44,8 @@ var max_combo_delay := 1.0
 var text_animation_player
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -750.0
-const DASH_SPEED = 800.0
+const JUMP_VELOCITY = -850.0
+const DASH_SPEED = 500.0
 var moving: bool = false
 var attacking: bool = false
 var jumping: bool = false
@@ -83,7 +84,29 @@ func _ready() -> void:
 	text_animation_player = get_tree().get_first_node_in_group("textanimator")
 
 func send_knockback(amount: int) -> void:
+	#knockback_force = amount
 	knockback_force = amount
+	if dir == -1:
+		knockback_dir = Vector2.LEFT
+	if dir == 1:
+		knockback_dir = Vector2.RIGHT
+	
+	var knockback_velocity = knockback_dir.normalized() * knockback_force
+	velocity += knockback_velocity
+	
+func apply_impulse(push_velocity: Vector2) -> void:
+	velocity += push_velocity
+
+func send_knockup(amount: int) -> void:
+	#if dir == -1:
+		#knockup_dir = Vector2.LEFT
+	#if dir == 1:
+		#knockup_dir = Vector2.RIGHT
+	var knockup_velocity = Vector2.UP.normalized() * amount
+	velocity += knockup_velocity
+	print("knockup velocity: ", + velocity)
+	Log.print("knockup velocity:")
+	Log.print(str(velocity))
 
 func _physics_process(delta: float) -> void:
 	combo_timer -= delta
@@ -101,13 +124,6 @@ func _physics_process(delta: float) -> void:
 
 	dash()
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump_p2") and is_on_floor() and not attacking:
-		velocity.y = JUMP_VELOCITY
-		jumping = true
-		can_dash = true
-		animation_player.play("jump")
-		print(animation_player.current_animation)
 #attack inputs
 	if Input.is_action_just_pressed("A_p2") and not jumping and can_attack1 and not attacking:
 		#maybe make an attacking timer for all attacks (recovery time)
@@ -149,7 +165,20 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left_p2", "right_p2")
-	if direction:
+	# Handle jump.
+	if Input.is_action_just_pressed("jump_p2") and is_on_floor() and not attacking:
+		jumping = true
+		if direction and jumping:
+			print("movement jump")
+			var acceleration := SPEED * delta * 6
+			var x_impulse = direction * 800
+			velocity.x = move_toward(x_impulse, velocity.x, acceleration)
+			move_and_slide()
+			print(velocity.x)
+		velocity.y = JUMP_VELOCITY
+		#can_dash = true
+		animation_player.play("jump")
+	if direction and is_on_floor():
 		if dashing:
 			velocity.x = direction * DASH_SPEED
 		else:
@@ -164,7 +193,7 @@ func _physics_process(delta: float) -> void:
 				damaged = false
 			if not attacking and not jumping and moving and is_on_floor():
 				animation_player.play("walk")
-	else:
+	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		moving = false
 		if damaged:

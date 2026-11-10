@@ -21,3 +21,5 @@ func _on_area_entered(hitbox: FrameData) -> void:
 		owner.send_damage(hitbox.damage)
 	if owner.has_method("send_knockback"):
 		owner.send_knockback(hitbox.knockback_force)
+	if owner.has_method("send_knockup"):
+		owner.send_knockup(hitbox.knockup_force)

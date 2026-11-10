@@ -1,13 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8fvtmrxepwcm"]
+[gd_scene load_steps=11 format=3 uid="uid://c8fvtmrxepwcm"]
 
 [ext_resource type="Script" uid="uid://bvk0tugk7ikit" path="res://scripts/player_2_controller.gd" id="1_26jli"]
 [ext_resource type="Script" uid="uid://dgpsh071eifvc" path="res://scripts/hurtbox.gd" id="2_0cnb2"]
+[ext_resource type="Script" uid="uid://df1m6mmdmj1gj" path="res://scripts/pushbox.gd" id="2_jwvs0"]
 [ext_resource type="PackedScene" uid="uid://corempp0w3wf8" path="res://scenes/UI/HealthBar.tscn" id="3_v3k6e"]
 [ext_resource type="Texture2D" uid="uid://wm7h2kq1aqkc" path="res://assets/MainFightUI/HealthBarBackgroundFliped.png" id="4_nr1sv"]
 [ext_resource type="PackedScene" uid="uid://bt6rf2ymc4c1h" path="res://scenes/UI/SoulMeter.tscn" id="4_y212g"]
 [ext_resource type="Texture2D" uid="uid://w638263nww2n" path="res://assets/MainFightUI/HealthBarSpriteFlipped.png" id="5_jwvs0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gl3fx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwvs0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v3k6e"]
 radius = 74.65343
@@ -19,6 +22,17 @@ script = ExtResource("1_26jli")
 [node name="player2_collider" type="CollisionShape2D" parent="."]
 scale = Vector2(7, 7)
 shape = SubResource("CapsuleShape2D_gl3fx")
+
+[node name="Pushbox" type="Area2D" parent="."]
+position = Vector2(0, -168)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("2_jwvs0")
+metadata/_custom_type_script = "uid://df1m6mmdmj1gj"
+
+[node name="pushbox_collider" type="CollisionShape2D" parent="Pushbox"]
+scale = Vector2(3.759, 2)
+shape = SubResource("CapsuleShape2D_jwvs0")
+debug_color = Color(0.9754619, 0, 0.42274308, 0.41960785)
 
 [node name="player2_LOADEDANIMS" type="Node2D" parent="."]
 
@@ -59,4 +73,5 @@ position = Vector2(466, 516)
 
 [node name="p_1ComboTimer" type="Timer" parent="."]
 
+[connection signal="body_entered" from="Pushbox" to="Pushbox" method="_on_body_entered"]
 [connection signal="timeout" from="p_1ComboTimer" to="." method="_on_p_1_combo_timer_timeout"]
