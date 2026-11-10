@@ -21,7 +21,7 @@ var player2_instance
 
 @onready var text_animation_player = $TextAnimationPlayer
 
-@onready var soul_meter_animation_player = $SoulMeterAnimationPlayer
+#@onready var soul_meter_animation_player = $SoulMeterAnimationPlayer
 @onready var pause_screen = $CanvasLayer/PauseScreen
 
 var round_counter = 0
@@ -163,9 +163,9 @@ func reset_players():
 	
 	p_1.soul_meter.value = 0
 	p_2.soul_meter.value = 0
-	soul_meter_animation_player.stop()
-	$CanvasLayer/SoulMeterFullP1.hide()
-	$CanvasLayer/SoulMeterFullP2.hide()
+	#soul_meter_animation_player.stop()
+	#$CanvasLayer/SoulMeterFullP1.hide()
+	#$CanvasLayer/SoulMeterFullP2.hide()
 	
 	#health reset
 	p_1.p_1_current_health = 100;
@@ -261,11 +261,11 @@ func check_for_slots():
 	#checking if slots can roll
 	if p_1.soul_meter.value >= 100:
 		p_2.can_use_slot = true
-		soul_meter_animation_player.play("p2_meter_full")
+		#soul_meter_animation_player.play("p2_meter_full")
 		#p_1.soul_meter.get("theme_overrides_styles/fill").bg_color = Color(1.0, 0.929, 0.0, 1.0)
 	if p_2.soul_meter.value >= 100:
 		p_1.can_use_slot = true
-		soul_meter_animation_player.play("p1_meter_full")
+		#soul_meter_animation_player.play("p1_meter_full")
 		#p_2.soul_meter.get("theme_overrides_styles/fill").bg_color = Color(1.0, 0.929, 0.0, 1.0)
 	
 	#checking if slots have rolled
@@ -273,14 +273,14 @@ func check_for_slots():
 		p_2.soul_meter.value = 0
 		p_1.can_use_slot = false
 		p_1.slots_have_rolled = false
-		soul_meter_animation_player.stop()
-		$CanvasLayer/SoulMeterFullP1.hide()
+		#soul_meter_animation_player.stop()
+		#$CanvasLayer/SoulMeterFullP1.hide()
 	if p_2.slots_have_rolled == true:
 		p_1.soul_meter.value = 0
 		p_2.can_use_slot = false
 		p_2.slots_have_rolled = false
-		soul_meter_animation_player.stop()
-		$CanvasLayer/SoulMeterFullP2.hide()
+		#soul_meter_animation_player.stop()
+		#$CanvasLayer/SoulMeterFullP2.hide()
 
 func sticker_reset():
 	p_1.hits_in_a_row = 0
