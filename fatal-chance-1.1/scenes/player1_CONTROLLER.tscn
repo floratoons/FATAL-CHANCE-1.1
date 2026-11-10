@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://plvnjhdey54w" path="res://scripts/player_1_controller.gd" id="1_l2ouc"]
 [ext_resource type="Script" uid="uid://dgpsh071eifvc" path="res://scripts/hurtbox.gd" id="2_h1fbb"]
-[ext_resource type="Script" uid="uid://df1m6mmdmj1gj" path="res://scripts/pushbox.gd" id="2_nxdn6"]
+[ext_resource type="Script" path="res://scripts/pushbox.gd" id="2_nxdn6"]
 [ext_resource type="PackedScene" uid="uid://corempp0w3wf8" path="res://scenes/UI/HealthBar.tscn" id="3_mao05"]
-[ext_resource type="PackedScene" uid="uid://bt6rf2ymc4c1h" path="res://scenes/UI/SoulMeter.tscn" id="4_s27n8"]
+[ext_resource type="PackedScene" uid="uid://cgsdqaaubn7cb" path="res://scenes/UI/new_soul_meter.tscn" id="5_nxdn6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l4xo0"]
 
@@ -53,13 +53,12 @@ offset_top = 23.0
 offset_right = 3306.0
 offset_bottom = 214.0
 
-[node name="SoulMeter" parent="CanvasLayer" instance=ExtResource("4_s27n8")]
-offset_left = 789.0
-offset_top = 99.00001
-offset_right = 914.0
-offset_bottom = 119.00001
-scale = Vector2(1.75, 1.75)
-fill_mode = 1
+[node name="NewSoulMeter" parent="CanvasLayer" instance=ExtResource("5_nxdn6")]
+offset_left = 980.0
+offset_top = 736.0
+offset_right = 1065.0
+offset_bottom = 924.0
+scale = Vector2(-1.5, 1.5)
 
 [node name="StockMarker" type="Marker2D" parent="CanvasLayer"]
 position = Vector2(182, 120)

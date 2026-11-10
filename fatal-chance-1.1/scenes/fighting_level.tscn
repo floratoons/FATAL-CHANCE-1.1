@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cgw4leqrer1jf"]
+[gd_scene load_steps=50 format=3 uid="uid://cgw4leqrer1jf"]
 
 [ext_resource type="PackedScene" uid="uid://b2phxnvltprk4" path="res://scenes/ground.tscn" id="1_a5f3i"]
 [ext_resource type="Script" uid="uid://b44xuna16rqwy" path="res://scripts/fighting_level.gd" id="1_ciglj"]
@@ -24,9 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://7wwec8swa1ti" path="res://assets/MainFightUI/Player1.png" id="21_36neh"]
 [ext_resource type="Texture2D" uid="uid://ckwlt3r0l1f0p" path="res://assets/MainFightUI/Player 2.png" id="23_ym4op"]
 [ext_resource type="PackedScene" uid="uid://dmet1w3w3gmwh" path="res://scenes/music_manager.tscn" id="24_nt4n8"]
-[ext_resource type="Texture2D" uid="uid://dayhiqoammxqu" path="res://assets/MainFightUI/SoulMeterFull.png" id="24_ym4op"]
 [ext_resource type="PackedScene" uid="uid://blcyxhcsiypqr" path="res://scenes/UI/PauseScreen.tscn" id="25_44brw"]
-[ext_resource type="Script" uid="uid://sftv4lgs0311" path="res://scripts/ceiling.gd" id="27_hsoko"]
+[ext_resource type="Script" path="res://scripts/ceiling.gd" id="27_hsoko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ciglj"]
 
@@ -845,122 +844,6 @@ _data = {
 &"round_2_start": SubResource("Animation_44brw")
 }
 
-[sub_resource type="Animation" id="Animation_37rab"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("CanvasLayer/SoulMeterFullP1:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/SoulMeterFullP1:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(398.99997, 116)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("CanvasLayer/SoulMeterFullP2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer/SoulMeterFullP2:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(898, 116.5)]
-}
-
-[sub_resource type="Animation" id="Animation_86ft7"]
-resource_name = "p1_meter_full"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/SoulMeterFullP1:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/SoulMeterFullP1:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(398.99997, 116), Vector2(397, 118), Vector2(399, 116), Vector2(396, 118), Vector2(395, 116), Vector2(398, 119.00001), Vector2(397, 116), Vector2(398, 119), Vector2(396.99997, 116.00001), Vector2(398.99997, 119), Vector2(397, 114)]
-}
-
-[sub_resource type="Animation" id="Animation_eqmv6"]
-resource_name = "p2_meter_full"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/SoulMeterFullP2:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/SoulMeterFullP2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(898, 116.5), Vector2(893.99994, 120.00001), Vector2(897.99994, 117), Vector2(895, 120), Vector2(897.99994, 117), Vector2(897, 120), Vector2(896, 118), Vector2(897, 122.00001), Vector2(896, 118), Vector2(896, 123.00001), Vector2(893, 119)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_37rab"]
-_data = {
-&"RESET": SubResource("Animation_37rab"),
-&"p1_meter_full": SubResource("Animation_86ft7"),
-&"p2_meter_full": SubResource("Animation_eqmv6")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86ft7"]
 
 [node name="fighting_level" type="Node2D"]
@@ -1199,18 +1082,6 @@ visible = false
 position = Vector2(633, 538)
 texture = ExtResource("23_ym4op")
 
-[node name="SoulMeterFullP1" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(398.99997, 116)
-scale = Vector2(0.32044196, 0.19838057)
-texture = ExtResource("24_ym4op")
-
-[node name="SoulMeterFullP2" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(898, 116.5)
-scale = Vector2(0.32044196, 0.19838057)
-texture = ExtResource("24_ym4op")
-
 [node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("25_44brw")]
 process_mode = 2
 visible = false
@@ -1225,11 +1096,6 @@ libraries = {
 process_mode = 3
 libraries = {
 &"": SubResource("AnimationLibrary_nt4n8")
-}
-
-[node name="SoulMeterAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_37rab")
 }
 
 [node name="MusicManager" parent="." instance=ExtResource("24_nt4n8")]

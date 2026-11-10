@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgsdqaaubn7cb"]
+
+[ext_resource type="Texture2D" uid="uid://3afk28xp42o7" path="res://assets/MainFightUI/meter_empty.png" id="1_gbapa"]
+[ext_resource type="Texture2D" uid="uid://x7berb4cc1wi" path="res://assets/MainFightUI/meter_frame.png" id="2_kqgis"]
+[ext_resource type="Texture2D" uid="uid://cnplo1f1unjyf" path="res://assets/MainFightUI/meter_full.png" id="3_1qmjc"]
+
+[node name="NewSoulMeter" type="TextureProgressBar"]
+offset_left = -40.0
+offset_top = -95.0
+offset_right = 45.0
+offset_bottom = 93.0
+value = 50.0
+fill_mode = 3
+texture_under = ExtResource("1_gbapa")
+texture_over = ExtResource("2_kqgis")
+texture_progress = ExtResource("3_1qmjc")

@@ -21,7 +21,7 @@ var stocks
 @onready var stock_marker = $CanvasLayer/StockMarker
 var slot_machine
 @onready var health_bar = $CanvasLayer/HealthBar
-@onready var soul_meter = $CanvasLayer/SoulMeter
+@onready var soul_meter = $CanvasLayer/NewSoulMeter
 
 var can_use_slot = false
 var slots_have_rolled = false
