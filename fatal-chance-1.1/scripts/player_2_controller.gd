@@ -23,7 +23,7 @@ var lives_lost = 0
 @onready var text_marker = $CanvasLayer/TextMarker
 var round_text = preload("res://scenes/UI/RoundText.tscn")
 
-@onready var soul_meter = $CanvasLayer/SoulMeter
+@onready var soul_meter = $CanvasLayer/NewSoulMeter
 @onready var health_bar = $CanvasLayer/HealthBar
 var slot_machine
 var can_use_slot = false

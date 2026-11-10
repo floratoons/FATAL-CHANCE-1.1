@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bvk0tugk7ikit" path="res://scripts/player_2_controller.gd" id="1_26jli"]
 [ext_resource type="Script" uid="uid://dgpsh071eifvc" path="res://scripts/hurtbox.gd" id="2_0cnb2"]
-[ext_resource type="Script" uid="uid://df1m6mmdmj1gj" path="res://scripts/pushbox.gd" id="2_jwvs0"]
+[ext_resource type="Script" path="res://scripts/pushbox.gd" id="2_jwvs0"]
 [ext_resource type="PackedScene" uid="uid://corempp0w3wf8" path="res://scenes/UI/HealthBar.tscn" id="3_v3k6e"]
 [ext_resource type="Texture2D" uid="uid://wm7h2kq1aqkc" path="res://assets/MainFightUI/HealthBarBackgroundFliped.png" id="4_nr1sv"]
-[ext_resource type="PackedScene" uid="uid://bt6rf2ymc4c1h" path="res://scenes/UI/SoulMeter.tscn" id="4_y212g"]
 [ext_resource type="Texture2D" uid="uid://w638263nww2n" path="res://assets/MainFightUI/HealthBarSpriteFlipped.png" id="5_jwvs0"]
+[ext_resource type="PackedScene" uid="uid://cgsdqaaubn7cb" path="res://scenes/UI/new_soul_meter.tscn" id="7_jwvs0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gl3fx"]
 
@@ -27,7 +27,6 @@ shape = SubResource("CapsuleShape2D_gl3fx")
 position = Vector2(0, -168)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("2_jwvs0")
-metadata/_custom_type_script = "uid://df1m6mmdmj1gj"
 
 [node name="pushbox_collider" type="CollisionShape2D" parent="Pushbox"]
 scale = Vector2(3.759, 2)
@@ -58,12 +57,12 @@ fill_mode = 1
 texture_under = ExtResource("4_nr1sv")
 texture_progress = ExtResource("5_jwvs0")
 
-[node name="SoulMeter" parent="CanvasLayer" instance=ExtResource("4_y212g")]
-offset_left = 288.00003
-offset_top = 99.00001
-offset_right = 413.00003
-offset_bottom = 119.00001
-scale = Vector2(1.75, 1.75)
+[node name="NewSoulMeter" parent="CanvasLayer" instance=ExtResource("7_jwvs0")]
+offset_left = 321.0
+offset_top = 736.0
+offset_right = 406.0
+offset_bottom = 924.0
+scale = Vector2(1.5, 1.5)
 
 [node name="StockMarker" type="Marker2D" parent="CanvasLayer"]
 position = Vector2(1042, 120)
