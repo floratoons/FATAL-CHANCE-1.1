@@ -483,8 +483,8 @@ debug_color = Color(0.90464115, 0.21376505, 0.55424064, 0.41960785)
 
 [node name="FrameData2" type="Area2D" parent="."]
 script = ExtResource("3_oltm3")
-damage = 4
-knockback_force = 1500
+damage = 6
+knockback_force = 500
 knockup_force = 150
 metadata/_custom_type_script = "uid://cdra6accyalp7"
 

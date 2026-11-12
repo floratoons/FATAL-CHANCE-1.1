@@ -132,17 +132,17 @@ func _physics_process(delta: float) -> void:
 		animation_player.play("B1")
 		attack_timer(.45)
 
-	if can_special1 and Input.is_action_pressed("A_p1") and Input.is_action_just_pressed("B_p1") and not attacking:
+	if can_special1 and Input.is_action_pressed("C_p1") and not attacking:
 		animation_player.play("RESET")
 		attacking = true
 		animation_player.play("S1")
 
-	if can_special2 and Input.is_action_pressed("B_p1") and Input.is_action_just_pressed("C_p1") and not attacking:
+	if can_special2 and Input.is_action_pressed("C_p1") and not attacking:
 		animation_player.play("RESET")
 		attacking = true
 		animation_player.play("S2")
 
-	if can_special3 and Input.is_action_pressed("A_p1") and Input.is_action_just_pressed("C_p1") and not attacking:
+	if can_special3 and Input.is_action_pressed("C_p1") and not attacking:
 		animation_player.play("RESET")
 		attacking = true
 		animation_player.play("S3")
@@ -246,7 +246,7 @@ func roll_slots():
 		else:
 			combo_timer = max_combo_delay
 
-	if is_combo and Input.is_action_pressed("crouch_p1") and Input.is_action_just_pressed("A_p1") and can_use_slot == true:
+	if Input.is_action_pressed("roll_slots_p1") and can_use_slot == true:
 		slots_have_rolled = true
 		print(is_combo)
 		var s1 = get_tree().get_nodes_in_group("slot1")

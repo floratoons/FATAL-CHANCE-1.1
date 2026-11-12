@@ -356,7 +356,7 @@ libraries = {
 
 [node name="FrameData" type="Area2D" parent="."]
 script = ExtResource("3_jyu70")
-damage = 3
+damage = 5
 knockback_force = 1000
 knockup_force = 100
 metadata/_custom_type_script = "uid://cdra6accyalp7"
@@ -370,7 +370,7 @@ debug_color = Color(3.946722e-06, 0.6032858, 0.6826914, 0.41960785)
 
 [node name="FrameData2" type="Area2D" parent="."]
 script = ExtResource("3_jyu70")
-damage = 6
+damage = 9
 knockback_force = 400
 knockup_force = 800
 metadata/_custom_type_script = "uid://cdra6accyalp7"

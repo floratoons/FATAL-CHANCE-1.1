@@ -55,10 +55,8 @@ Buttons
 1: Light Attack
 2: Heavy Attack
 
-Down, 1: Roll Slots
-Down, 2: BLUE
-2, 3: YELLOW
-1, 3: RED"
+Down Lever 1: Roll Slots
+3: BLUE, YELLOW, RED (SPECIAL)"
 
 [node name="Player 2" type="Label" parent="."]
 layout_mode = 0
@@ -85,10 +83,8 @@ Buttons
 1: Light Attack
 2: Heavy Attack
 
-Down, 1: Roll Slots
-Down, 2: BLUE
-2, 3: YELLOW
-1, 3: RED"
+Down Lever 2: Roll Slots
+3: BLUE, YELLOW, RED (SPECIAL)"
 horizontal_alignment = 2
 
 [node name="Rolls" type="Label" parent="."]
