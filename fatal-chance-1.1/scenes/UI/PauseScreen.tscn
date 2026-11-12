@@ -46,18 +46,19 @@ offset_top = 125.0
 offset_right = 218.0
 offset_bottom = 554.0
 theme_override_font_sizes/font_size = 24
-text = "A & D: Move
-W: Jump
-S: Crouch/Block
+text = "Joystick
+Left/Right: Movement
+Up: Jump
+Down: Block
 
-J: Attack 1
-K: Attack 2
+Buttons
+1: Light Attack
+2: Heavy Attack
 
-S and J: Roll Slots
-J and K: BLUE
-K and L: YELLOW
-J and L: RED"
-horizontal_alignment = 1
+Down, 1: Roll Slots
+Down, 2: BLUE
+2, 3: YELLOW
+1, 3: RED"
 
 [node name="Player 2" type="Label" parent="."]
 layout_mode = 0
@@ -70,25 +71,25 @@ text = "Player 2"
 
 [node name="P2Controls" type="Label" parent="Player 2"]
 layout_mode = 0
-offset_left = -190.0
+offset_left = -268.0
 offset_top = 111.0
-offset_right = 321.0
+offset_right = 243.0
 offset_bottom = 732.0
 theme_override_font_sizes/font_size = 24
-text = "Left & Right Arrows: 
-Move
-Up Arrow: Jump
-Down Arrow: Crouch/Block
+text = "Joystick
+Left/Right: Movement
+Up: Jump
+Down: Block
 
-Num Pad 1: Attack 1
-Num Pad 2: Attack 2
+Buttons
+1: Light Attack
+2: Heavy Attack
 
-Down Arrow and Num Pad 1: 
-Roll Slots
-Num 1 and Num 2: BLUE
-Num 2 and Num 3: YELLOW
-Num 1 and Num 3: RED"
-horizontal_alignment = 1
+Down, 1: Roll Slots
+Down, 2: BLUE
+2, 3: YELLOW
+1, 3: RED"
+horizontal_alignment = 2
 
 [node name="Rolls" type="Label" parent="."]
 layout_mode = 1
@@ -106,10 +107,12 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "Roll the Slot Machine 
 to Activate Your 
-Specials Input:
-Consecutive Matching 
-Symbols Will Increase 
-Your Damage"
+Specials Input
+---
+Back-To-Back 
+Matching 
+Symbols Increase 
+Your Damage!"
 horizontal_alignment = 1
 
 [node name="FightWordsAssets" type="Sprite2D" parent="."]

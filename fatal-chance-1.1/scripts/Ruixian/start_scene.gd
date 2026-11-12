@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed():
 	$ClickSound.play()
-	await SceneTransition.fade_in()
+	#await SceneTransition.fade_in()
 	get_tree().change_scene_to_file("res://scenes/Ruixian/Character_Selection_Scene.tscn")
 
 func _physics_process(delta: float) -> void:

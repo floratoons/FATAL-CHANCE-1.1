@@ -375,5 +375,5 @@ func _select_character(character_name: String):
 func _go_to_map_selection():
 	GlobalData.p1_character = p1_choice
 	GlobalData.p2_character = p2_choice
-	await SceneTransition.fade_in()
+	#await SceneTransition.fade_in()
 	get_tree().change_scene_to_file("res://scenes/Ruixian/Map_Selection_Scene.tscn")

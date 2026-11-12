@@ -25,5 +25,5 @@ func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			get_node("/root/Node2D/ClickSound").play()
-			await SceneTransition.fade_in()
+			#await SceneTransition.fade_in()
 			get_tree().change_scene_to_file(("res://scenes/") + (map_scene) + (".tscn"))
