@@ -1,23 +1,47 @@
-[gd_scene load_steps=32 format=3 uid="uid://b6gmefskwdvcf"]
+[gd_scene load_steps=62 format=3 uid="uid://b6gmefskwdvcf"]
 
-[ext_resource type="Texture2D" uid="uid://jwlwx7rg0qeo" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_idle_2.PNG" id="1_ydvvx"]
-[ext_resource type="Texture2D" uid="uid://c53uvr5lomt7n" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_idle_1.PNG" id="2_gluef"]
-[ext_resource type="Texture2D" uid="uid://b7bwmqlrbhr0o" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_walk_1.PNG" id="3_7jfvw"]
+[ext_resource type="Texture2D" uid="uid://jwlwx7rg0qeo" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_idle_2.PNG" id="1_ydvvx"]
+[ext_resource type="Texture2D" uid="uid://c53uvr5lomt7n" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_idle_1.PNG" id="2_gluef"]
+[ext_resource type="Texture2D" uid="uid://b7bwmqlrbhr0o" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_walk_1.PNG" id="3_7jfvw"]
 [ext_resource type="Script" uid="uid://cdra6accyalp7" path="res://scripts/frame_data.gd" id="3_jyu70"]
-[ext_resource type="Texture2D" uid="uid://d28yr0po1x8u5" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_walk_2.PNG" id="4_b0o4h"]
-[ext_resource type="Texture2D" uid="uid://cynyur8cu32lx" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_jump_2.PNG" id="4_i41w0"]
-[ext_resource type="Texture2D" uid="uid://bkrvyn1vnvdxq" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_jump_3.PNG" id="5_1g15b"]
-[ext_resource type="Texture2D" uid="uid://chq7clk2qvaqj" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_crouch_2.PNG" id="8_1g15b"]
-[ext_resource type="Texture2D" uid="uid://bxqhripewd55" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_crouch_1.PNG" id="9_ssq2m"]
-[ext_resource type="Texture2D" uid="uid://cm1etuw61rlv1" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack1_1.PNG" id="10_pxgxb"]
-[ext_resource type="Texture2D" uid="uid://d0u0mxtbr0irr" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack1_2.PNG" id="11_h6raf"]
-[ext_resource type="Texture2D" uid="uid://b5omcskl440gb" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack2_1.PNG" id="14_yc7xy"]
-[ext_resource type="Texture2D" uid="uid://bm6uevvh82o60" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack2_2.PNG" id="15_feflk"]
-[ext_resource type="Texture2D" uid="uid://dayt4t6l4yhos" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_attack2_3.PNG" id="16_xhxo4"]
-[ext_resource type="Texture2D" uid="uid://b6m401yrgg3kx" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_jump_1.PNG" id="17_feflk"]
-[ext_resource type="Texture2D" uid="uid://bqhcy6gqaypfp" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_stanceswitch_1.PNG" id="20_b6e6e"]
-[ext_resource type="Texture2D" uid="uid://g7ngna3tlclu" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_stanceswitch_2.PNG" id="21_rgl54"]
-[ext_resource type="Texture2D" uid="uid://bptd44836lme8" path="res://assets/Animation/Kismet/Sketch_ver/Kismet_stanceswitch_3.PNG" id="22_dv25o"]
+[ext_resource type="Texture2D" uid="uid://d28yr0po1x8u5" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_walk_2.PNG" id="4_b0o4h"]
+[ext_resource type="Texture2D" uid="uid://cynyur8cu32lx" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_jump_2.PNG" id="4_i41w0"]
+[ext_resource type="Texture2D" uid="uid://bkrvyn1vnvdxq" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_jump_3.PNG" id="5_1g15b"]
+[ext_resource type="Texture2D" uid="uid://b60x5w5tl2jah" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_1.PNG" id="7_8irgq"]
+[ext_resource type="Texture2D" uid="uid://chq7clk2qvaqj" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_crouch_2.PNG" id="8_1g15b"]
+[ext_resource type="Texture2D" uid="uid://p2pj857xpqgn" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_2.PNG" id="8_4y7vv"]
+[ext_resource type="Texture2D" uid="uid://bl6lhwpva8nd4" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_3.PNG" id="9_82f4l"]
+[ext_resource type="Texture2D" uid="uid://bxqhripewd55" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_crouch_1.PNG" id="9_ssq2m"]
+[ext_resource type="Texture2D" uid="uid://yf15g67ifn85" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_stanceswitch_4.PNG" id="10_4bxig"]
+[ext_resource type="Texture2D" uid="uid://ds5hpluim8exr" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_4.PNG" id="10_4v4fg"]
+[ext_resource type="Texture2D" uid="uid://cm1etuw61rlv1" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_attack1_1.PNG" id="10_pxgxb"]
+[ext_resource type="Texture2D" uid="uid://d0u0mxtbr0irr" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_attack1_2.PNG" id="11_h6raf"]
+[ext_resource type="Texture2D" uid="uid://d4jg3uumfds34" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_5.PNG" id="11_kh6ld"]
+[ext_resource type="Texture2D" uid="uid://ccscukpt6dg5a" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_6.PNG" id="12_bpldc"]
+[ext_resource type="Texture2D" uid="uid://dears44k4gess" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_7.PNG" id="13_yfye5"]
+[ext_resource type="Texture2D" uid="uid://2semyvr4qhwy" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_8.PNG" id="14_hcm3i"]
+[ext_resource type="Texture2D" uid="uid://b5omcskl440gb" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_attack2_1.PNG" id="14_yc7xy"]
+[ext_resource type="Texture2D" uid="uid://bm6uevvh82o60" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_attack2_2.PNG" id="15_feflk"]
+[ext_resource type="Texture2D" uid="uid://ciu3kvtxubcyq" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_9.PNG" id="15_nuvgj"]
+[ext_resource type="Texture2D" uid="uid://betuj4mmstx7h" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_10.PNG" id="16_uk5bs"]
+[ext_resource type="Texture2D" uid="uid://dayt4t6l4yhos" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_attack2_3.PNG" id="16_xhxo4"]
+[ext_resource type="Texture2D" uid="uid://b6m401yrgg3kx" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_jump_1.PNG" id="17_feflk"]
+[ext_resource type="Texture2D" uid="uid://bebp35sinqvyf" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_11.PNG" id="17_jx6f7"]
+[ext_resource type="Texture2D" uid="uid://ddounjkvxfap0" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_damage_1.PNG" id="18_3hqsa"]
+[ext_resource type="Texture2D" uid="uid://cq25j1vim0fbe" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_12.PNG" id="18_y0y0d"]
+[ext_resource type="Texture2D" uid="uid://4n1sf63vnedj" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_roll_1.PNG" id="19_dv25o"]
+[ext_resource type="Texture2D" uid="uid://u0mubmwd3fff" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_special_13.PNG" id="19_vhvpg"]
+[ext_resource type="Texture2D" uid="uid://bqhcy6gqaypfp" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_stanceswitch_1.PNG" id="20_b6e6e"]
+[ext_resource type="Texture2D" uid="uid://5kof3iih2ij8" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_roll_2.PNG" id="20_sw5pi"]
+[ext_resource type="Texture2D" uid="uid://gbt7jjo4xd23" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_roll_3.PNG" id="21_4fgxw"]
+[ext_resource type="Texture2D" uid="uid://g7ngna3tlclu" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_stanceswitch_2.PNG" id="21_rgl54"]
+[ext_resource type="Texture2D" uid="uid://bj4jujedya8kp" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_roll_4.PNG" id="22_2dk7s"]
+[ext_resource type="Texture2D" uid="uid://bptd44836lme8" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_stanceswitch_3.PNG" id="22_dv25o"]
+[ext_resource type="Texture2D" uid="uid://ie3w0ok1usvi" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_roll_5.PNG" id="23_4bxig"]
+[ext_resource type="Texture2D" uid="uid://cj4ceusiupddi" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_roll_6.PNG" id="24_24knw"]
+[ext_resource type="Texture2D" uid="uid://bniseuk67mbsn" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_damage_whip_1.PNG" id="26_24knw"]
+[ext_resource type="Texture2D" uid="uid://bcdn8cdeo0ypk" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_idle_whip_1.PNG" id="27_gwi8g"]
+[ext_resource type="Texture2D" uid="uid://b4owgiami51b2" path="res://assets/Animation/Kismet/Kismet_Animations/Kismet_idle_whip_2.PNG" id="28_04dmp"]
 
 [sub_resource type="Animation" id="Animation_1w1vg"]
 resource_name = "A1"
@@ -209,10 +233,22 @@ tracks/6/keys = {
 "update": 0,
 "values": [-0.60598254]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -25)]
+}
 
 [sub_resource type="Animation" id="Animation_4fgxw"]
 resource_name = "S1"
-length = 0.2
+length = 1.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -220,10 +256,22 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.53333336, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("20_b6e6e"), ExtResource("21_rgl54"), ExtResource("22_dv25o")]
+"values": [ExtResource("7_8irgq"), ExtResource("8_4y7vv"), ExtResource("9_82f4l"), ExtResource("10_4v4fg"), ExtResource("11_kh6ld"), ExtResource("12_bpldc"), ExtResource("12_bpldc"), ExtResource("13_yfye5"), ExtResource("14_hcm3i"), ExtResource("15_nuvgj"), ExtResource("16_uk5bs"), ExtResource("17_jx6f7"), ExtResource("18_y0y0d"), ExtResource("19_vhvpg")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2034888),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(247.805, -3.9), Vector2(247.805, -3.9)]
 }
 
 [sub_resource type="Animation" id="Animation_2dk7s"]
@@ -258,6 +306,36 @@ tracks/0/keys = {
 "values": [ExtResource("20_b6e6e"), ExtResource("21_rgl54"), ExtResource("22_dv25o")]
 }
 
+[sub_resource type="Animation" id="Animation_4hmew"]
+resource_name = "StanceSwitch1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("20_b6e6e"), ExtResource("21_rgl54"), ExtResource("22_dv25o"), ExtResource("10_4bxig")]
+}
+
+[sub_resource type="Animation" id="Animation_rqqms"]
+resource_name = "StanceSwitch2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("10_4bxig"), ExtResource("22_dv25o"), ExtResource("21_rgl54"), ExtResource("20_b6e6e")]
+}
+
 [sub_resource type="Animation" id="Animation_ogpe3"]
 resource_name = "crouch"
 loop_mode = 1
@@ -272,6 +350,62 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("8_1g15b"), ExtResource("9_ssq2m")]
+}
+
+[sub_resource type="Animation" id="Animation_yc7xy"]
+resource_name = "damaged"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("18_3hqsa"), ExtResource("2_gluef")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.083333336, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-3, -25), Vector2(0, -25), Vector2(-3, -25), Vector2(0, -25), Vector2(0, -25)]
+}
+
+[sub_resource type="Animation" id="Animation_c312g"]
+resource_name = "damaged_whip"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("26_24knw"), ExtResource("2_gluef")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.083333336, 0.13333334, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-3, -25), Vector2(0, -25), Vector2(-3, -25), Vector2(0, -25), Vector2(0, -25)]
 }
 
 [sub_resource type="Animation" id="Animation_7jfvw"]
@@ -290,6 +424,22 @@ tracks/0/keys = {
 "values": [ExtResource("2_gluef"), ExtResource("1_ydvvx"), ExtResource("2_gluef"), ExtResource("1_ydvvx"), ExtResource("2_gluef")]
 }
 
+[sub_resource type="Animation" id="Animation_a8k37"]
+resource_name = "idle_whip"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("27_gwi8g"), ExtResource("28_04dmp"), ExtResource("27_gwi8g"), ExtResource("28_04dmp"), ExtResource("27_gwi8g")]
+}
+
 [sub_resource type="Animation" id="Animation_bb6mi"]
 resource_name = "jump"
 length = 1.5
@@ -304,6 +454,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("2_gluef"), ExtResource("17_feflk"), ExtResource("4_i41w0"), ExtResource("5_1g15b")]
+}
+
+[sub_resource type="Animation" id="Animation_feflk"]
+resource_name = "roll"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.5, 0.83333343, 1.0000002, 1.1666667, 1.3333335, 1.5000001, 1.6666669, 1.8333334, 2, 2.1666667, 2.4666667, 2.7, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 5.0982447),
+"update": 1,
+"values": [ExtResource("19_dv25o"), ExtResource("20_sw5pi"), ExtResource("21_4fgxw"), ExtResource("22_2dk7s"), ExtResource("23_4bxig"), ExtResource("24_24knw"), ExtResource("22_2dk7s"), ExtResource("23_4bxig"), ExtResource("24_24knw"), ExtResource("22_2dk7s"), ExtResource("23_4bxig"), ExtResource("24_24knw"), ExtResource("22_2dk7s"), ExtResource("20_sw5pi"), ExtResource("19_dv25o"), ExtResource("2_gluef")]
 }
 
 [sub_resource type="Animation" id="Animation_i41w0"]
@@ -330,9 +496,15 @@ _data = {
 &"S1": SubResource("Animation_4fgxw"),
 &"S2": SubResource("Animation_2dk7s"),
 &"S3": SubResource("Animation_4bxig"),
+&"StanceSwitch1": SubResource("Animation_4hmew"),
+&"StanceSwitch2": SubResource("Animation_rqqms"),
 &"crouch": SubResource("Animation_ogpe3"),
+&"damaged": SubResource("Animation_yc7xy"),
+&"damaged_whip": SubResource("Animation_c312g"),
 &"idle": SubResource("Animation_7jfvw"),
+&"idle_whip": SubResource("Animation_a8k37"),
 &"jump": SubResource("Animation_bb6mi"),
+&"roll": SubResource("Animation_feflk"),
 &"walk": SubResource("Animation_i41w0")
 }
 
@@ -345,7 +517,7 @@ radius = 7.5559998
 height = 138.73138
 
 [node name="Sprite2D" type="Sprite2D"]
-position = Vector2(0, -25)
+position = Vector2(-3, -25)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_7jfvw")
 
