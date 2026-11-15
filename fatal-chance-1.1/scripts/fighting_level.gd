@@ -70,7 +70,7 @@ func start_round_intro() -> void:
 	text_animation_player.play("RoundOneStart")
 	await get_tree().create_timer(7).timeout
 	get_tree().paused = false
-	$SlotsAnimationPlayer.play("slots_slam")
+	#$SlotsAnimationPlayer.play("slots_slam")
 	
 	#label.text = "Ready..."
 	#label.add_theme_font_size_override("font_size", 45)
