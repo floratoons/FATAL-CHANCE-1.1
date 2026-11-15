@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8fvtmrxepwcm"]
+[gd_scene load_steps=10 format=3 uid="uid://c8fvtmrxepwcm"]
 
 [ext_resource type="Script" uid="uid://bvk0tugk7ikit" path="res://scripts/player_2_controller.gd" id="1_26jli"]
 [ext_resource type="Script" uid="uid://dgpsh071eifvc" path="res://scripts/hurtbox.gd" id="2_0cnb2"]
 [ext_resource type="Script" uid="uid://df1m6mmdmj1gj" path="res://scripts/pushbox.gd" id="2_jwvs0"]
 [ext_resource type="PackedScene" uid="uid://corempp0w3wf8" path="res://scenes/UI/HealthBar.tscn" id="3_v3k6e"]
-[ext_resource type="Texture2D" uid="uid://wm7h2kq1aqkc" path="res://assets/MainFightUI/HealthBarBackgroundFliped.png" id="4_nr1sv"]
-[ext_resource type="Texture2D" uid="uid://w638263nww2n" path="res://assets/MainFightUI/HealthBarSpriteFlipped.png" id="5_jwvs0"]
+[ext_resource type="Texture2D" uid="uid://bryruiqbqug1b" path="res://assets/MainFightUI/UpdatedUI/main_soul_off.png" id="6_nr1sv"]
 [ext_resource type="PackedScene" uid="uid://cgsdqaaubn7cb" path="res://scenes/UI/new_soul_meter.tscn" id="7_jwvs0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gl3fx"]
@@ -49,13 +48,11 @@ shape = SubResource("CapsuleShape2D_v3k6e")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthBar" parent="CanvasLayer" instance=ExtResource("3_v3k6e")]
-offset_left = 688.0
-offset_top = 23.0
-offset_right = 3891.0
-offset_bottom = 214.0
-fill_mode = 1
-texture_under = ExtResource("4_nr1sv")
-texture_progress = ExtResource("5_jwvs0")
+offset_left = 1107.0
+offset_top = 10.0
+offset_right = 1435.0
+offset_bottom = 43.0
+scale = Vector2(-1, 1)
 
 [node name="NewSoulMeter" parent="CanvasLayer" instance=ExtResource("7_jwvs0")]
 offset_left = 414.0
@@ -63,8 +60,17 @@ offset_top = 789.0
 offset_right = 499.0
 offset_bottom = 977.0
 
+[node name="Stock1OFF" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(730.5, 27)
+texture = ExtResource("6_nr1sv")
+
+[node name="Stock2Off" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(768.5, 27)
+texture = ExtResource("6_nr1sv")
+
 [node name="StockMarker" type="Marker2D" parent="CanvasLayer"]
-position = Vector2(1042, 120)
+position = Vector2(768, 26)
+scale = Vector2(-1, 1)
 
 [node name="TextMarker" type="Marker2D" parent="CanvasLayer"]
 position = Vector2(466, 516)

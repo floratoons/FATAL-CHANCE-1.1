@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://corempp0w3wf8"]
 
-[ext_resource type="Texture2D" uid="uid://bei5af1br6uw3" path="res://assets/MainFightUI/HealthBarSprite.png" id="1_4av4t"]
 [ext_resource type="Script" uid="uid://dv7nbsggnutx5" path="res://scripts/health_bar.gd" id="1_lkre2"]
-[ext_resource type="Texture2D" uid="uid://78olq0uisy68" path="res://assets/MainFightUI/HealthBarBackground.png" id="1_xfmwm"]
+[ext_resource type="Texture2D" uid="uid://ctakxmsjnjhgq" path="res://assets/MainFightUI/UpdatedUI/main_health_empty.png" id="1_xfmwm"]
+[ext_resource type="Texture2D" uid="uid://cvr5yr0qw11a6" path="res://assets/MainFightUI/UpdatedUI/main_health_full.png" id="2_mhiy5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0cg3"]
 bg_color = Color(0.063265726, 0.120772086, 0.10854084, 1)
@@ -18,13 +18,12 @@ bg_color = Color(1, 1, 1, 1)
 
 [node name="HealthBar" type="TextureProgressBar"]
 z_index = 1
-offset_right = 250.0
-offset_bottom = 10.0
-scale = Vector2(0.15414535, 0.15414535)
+offset_right = 328.0
+offset_bottom = 33.0
 size_flags_horizontal = 0
 value = 100.0
-texture_under = ExtResource("1_xfmwm")
-texture_progress = ExtResource("1_4av4t")
+texture_over = ExtResource("1_xfmwm")
+texture_progress = ExtResource("2_mhiy5")
 tint_under = Color(1, 1, 1, 0.7176471)
 script = ExtResource("1_lkre2")
 

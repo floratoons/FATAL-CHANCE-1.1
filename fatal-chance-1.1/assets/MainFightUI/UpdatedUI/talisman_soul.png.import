@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmtt1t5jg37ep"
-path="res://.godot/imported/main_soul_off 1.png-fd53a3b4e3a5d606889c331d1863e2e0.ctex"
+uid="uid://bcrm76cspghj6"
+path="res://.godot/imported/talisman_soul.png-c893e4e30cac10e8dc791052b7a36551.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MainFightUI/UpdatedUI/main_soul_off 1.png"
-dest_files=["res://.godot/imported/main_soul_off 1.png-fd53a3b4e3a5d606889c331d1863e2e0.ctex"]
+source_file="res://assets/MainFightUI/UpdatedUI/talisman_soul.png"
+dest_files=["res://.godot/imported/talisman_soul.png-c893e4e30cac10e8dc791052b7a36551.ctex"]
 
 [params]
 

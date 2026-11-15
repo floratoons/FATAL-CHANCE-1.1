@@ -29,6 +29,9 @@
 [ext_resource type="PackedScene" uid="uid://blcyxhcsiypqr" path="res://scenes/UI/PauseScreen.tscn" id="25_44brw"]
 [ext_resource type="Script" uid="uid://sftv4lgs0311" path="res://scripts/ceiling.gd" id="27_hsoko"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ow2st"]
+load_path = "res://.godot/imported/dust.png-8de900a4d620f6d3f2d6aed43df1801b.ctex"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ciglj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srmed"]
@@ -77,9 +80,6 @@ scale_min = 1.5
 scale_max = 1.8
 color_ramp = SubResource("GradientTexture1D_86ft7")
 color_initial_ramp = SubResource("GradientTexture1D_hsoko")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ow2st"]
-load_path = "res://.godot/imported/dust.png-8de900a4d620f6d3f2d6aed43df1801b.ctex"
 
 [sub_resource type="Animation" id="Animation_36neh"]
 length = 0.001
@@ -719,51 +719,6 @@ _data = {
 [node name="fighting_level" type="Node2D"]
 script = ExtResource("1_ciglj")
 
-[node name="ground" parent="." instance=ExtResource("1_a5f3i")]
-position = Vector2(0, 221)
-
-[node name="walls" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
-position = Vector2(1574, 74)
-scale = Vector2(1, 100)
-shape = SubResource("RectangleShape2D_ciglj")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
-position = Vector2(-426.6, 0)
-scale = Vector2(1, 100)
-shape = SubResource("RectangleShape2D_srmed")
-
-[node name="p_1Marker2D" type="Marker2D" parent="."]
-position = Vector2(240, 565)
-
-[node name="p_2Marker2D" type="Marker2D" parent="."]
-position = Vector2(1040, 565)
-
-[node name="BACKGROUND" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(609, 263.93604)
-scale = Vector2(0.9467587, 0.9467587)
-texture = ExtResource("3_eckv4")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(130, 512)
-amount = 25
-texture = SubResource("GradientTexture2D_oo7ha")
-lifetime = 5.0
-preprocess = 2.0
-speed_scale = 1.13
-randomness = 1.0
-trail_enabled = true
-trail_lifetime = 0.5
-process_material = SubResource("ParticleProcessMaterial_bwlns")
-
-[node name="AnathemaSpraytag" type="Sprite2D" parent="."]
-position = Vector2(1445, 314)
-rotation = -0.17312366
-scale = Vector2(0.1406915, 0.1406915)
-texture = ExtResource("4_cycp4")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="BackboardStickered" type="Sprite2D" parent="CanvasLayer"]
@@ -785,14 +740,6 @@ offset_bottom = 94.0
 grow_horizontal = 1
 grow_vertical = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="MainBottom" type="Sprite2D" parent="CanvasLayer/StickerManager"]
-position = Vector2(643, 848)
-texture = ExtResource("7_86ft7")
-
-[node name="MainTop" type="Sprite2D" parent="CanvasLayer/StickerManager"]
-position = Vector2(639, -32)
-texture = ExtResource("8_37rab")
 
 [node name="Timer" type="Node" parent="CanvasLayer"]
 script = ExtResource("4_ciglj")
@@ -840,6 +787,14 @@ offset_top = 845.0
 offset_bottom = 845.0
 grow_vertical = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="MainBottom" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(643, 942)
+texture = ExtResource("7_86ft7")
+
+[node name="MainTop" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(639, 62)
+texture = ExtResource("8_37rab")
 
 [node name="SplashBackgroundBlankP1" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(255.00003, 994.905)
@@ -963,6 +918,51 @@ texture = ExtResource("23_ym4op")
 [node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("25_44brw")]
 process_mode = 2
 visible = false
+
+[node name="ground" parent="." instance=ExtResource("1_a5f3i")]
+position = Vector2(0, 221)
+
+[node name="walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
+position = Vector2(1574, 74)
+scale = Vector2(1, 100)
+shape = SubResource("RectangleShape2D_ciglj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls"]
+position = Vector2(-426.6, 0)
+scale = Vector2(1, 100)
+shape = SubResource("RectangleShape2D_srmed")
+
+[node name="p_1Marker2D" type="Marker2D" parent="."]
+position = Vector2(240, 565)
+
+[node name="p_2Marker2D" type="Marker2D" parent="."]
+position = Vector2(1040, 565)
+
+[node name="BACKGROUND" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(609, 263.93604)
+scale = Vector2(0.9467587, 0.9467587)
+texture = ExtResource("3_eckv4")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(130, 512)
+amount = 25
+texture = SubResource("GradientTexture2D_oo7ha")
+lifetime = 5.0
+preprocess = 2.0
+speed_scale = 1.13
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_bwlns")
+
+[node name="AnathemaSpraytag" type="Sprite2D" parent="."]
+position = Vector2(1445, 314)
+rotation = -0.17312366
+scale = Vector2(0.1406915, 0.1406915)
+texture = ExtResource("4_cycp4")
 
 [node name="TextAnimationPlayer" type="AnimationPlayer" parent="." groups=["textanimator"]]
 process_mode = 3

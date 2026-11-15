@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://s2ir776scnoj"]
 
-[ext_resource type="Texture2D" uid="uid://mtm6na37sl3g" path="res://assets/MainFightUI/TalismanStock.png" id="1_g8woc"]
+[ext_resource type="Texture2D" uid="uid://bcrm76cspghj6" path="res://assets/MainFightUI/UpdatedUI/talisman_soul.png" id="1_g8woc"]
 
 [node name="AnathemaStocks" type="Control"]
 layout_mode = 3
@@ -11,11 +11,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Stock1" type="Sprite2D" parent="."]
-position = Vector2(0.20000076, -3.7999992)
-scale = Vector2(0.053986955, 0.053986955)
+texture_filter = 1
+position = Vector2(38, 0)
 texture = ExtResource("1_g8woc")
 
 [node name="Stock2" type="Sprite2D" parent="."]
-position = Vector2(60, -4)
-scale = Vector2(0.053986955, 0.053986955)
+texture_filter = 1
 texture = ExtResource("1_g8woc")
