@@ -19,7 +19,8 @@ height = 204.0
 script = ExtResource("1_26jli")
 
 [node name="player2_collider" type="CollisionShape2D" parent="."]
-scale = Vector2(7, 7)
+position = Vector2(30, 0)
+scale = Vector2(4.3, 7)
 shape = SubResource("CapsuleShape2D_gl3fx")
 
 [node name="Pushbox" type="Area2D" parent="."]

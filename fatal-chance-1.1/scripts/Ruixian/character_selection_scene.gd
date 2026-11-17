@@ -119,6 +119,28 @@ func _physics_process(delta: float) -> void:
 			#can change to 6 later
 			if $HorisontalUI.selected_index > 5:
 				$HorisontalUI.selected_index = 0
+			#anathema
+		if $HorisontalUI.selected_index == 1:
+			_on_card1_hover_enter()
+			if $HorisontalUI.selected_index == 1 && Input.is_action_just_pressed("select_p1"):
+				_on_card1_pressed()
+		else:
+			_on_card_hover_exit()
+	##talisman
+		if $HorisontalUI.selected_index == 2:
+			_on_card2_hover_enter()
+			if $HorisontalUI.selected_index == 2 && Input.is_action_just_pressed("select_p1"):
+				_on_card2_pressed()
+		else:
+			_on_card_hover_exit()
+	#kismet
+		if $HorisontalUI.selected_index == 3:
+			_on_card3_hover_enter()
+			if $HorisontalUI.selected_index == 3 && Input.is_action_just_pressed("select_p1"):
+				_on_card3_pressed()
+		else:
+			_on_card_hover_exit()
+
 	if current_turn == 2:
 		if Input.is_action_just_pressed("left_p2"):
 			print("called")
@@ -133,28 +155,27 @@ func _physics_process(delta: float) -> void:
 			#can change to 6 later
 			if $HorisontalUI.selected_index > 5:
 				$HorisontalUI.selected_index = 0
-#anathema
-	if $HorisontalUI.selected_index == 1:
-		_on_card1_hover_enter()
-		if $HorisontalUI.selected_index == 1 && Input.is_action_just_pressed("select"):
-			_on_card1_pressed()
-	else:
-		_on_card_hover_exit()
-##talisman
-	if $HorisontalUI.selected_index == 2:
-		_on_card2_hover_enter()
-		if $HorisontalUI.selected_index == 2 && Input.is_action_just_pressed("select"):
-			_on_card2_pressed()
-	else:
-		_on_card_hover_exit()
-#kismet
-	if $HorisontalUI.selected_index == 3:
-		_on_card3_hover_enter()
-		if $HorisontalUI.selected_index == 3 && Input.is_action_just_pressed("select"):
-			_on_card3_pressed()
-	else:
-		_on_card_hover_exit()
-			
+	#anathema
+		if $HorisontalUI.selected_index == 1:
+			_on_card1_hover_enter()
+			if $HorisontalUI.selected_index == 1 && Input.is_action_just_pressed("select_p2"):
+				_on_card1_pressed()
+		else:
+			_on_card_hover_exit()
+	##talisman
+		if $HorisontalUI.selected_index == 2:
+			_on_card2_hover_enter()
+			if $HorisontalUI.selected_index == 2 && Input.is_action_just_pressed("select_p2"):
+				_on_card2_pressed()
+		else:
+			_on_card_hover_exit()
+	#kismet
+		if $HorisontalUI.selected_index == 3:
+			_on_card3_hover_enter()
+			if $HorisontalUI.selected_index == 3 && Input.is_action_just_pressed("select_p2"):
+				_on_card3_pressed()
+		else:
+			_on_card_hover_exit()
 
 # Returns the position just above the center of a card, for placing indicators
 func _get_card_top_center(card: TextureButton) -> Vector2:

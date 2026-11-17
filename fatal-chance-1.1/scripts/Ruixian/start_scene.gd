@@ -28,5 +28,5 @@ func _physics_process(delta: float) -> void:
 		if $CarouselUI.selected_index > 5:
 			$CarouselUI.selected_index += 1
 
-	if $CarouselUI.selected_index == 2 && Input.is_action_just_pressed("select"):
+	if $CarouselUI.selected_index == 2 && Input.is_action_just_pressed("select_p1"):
 		_on_button_pressed()
