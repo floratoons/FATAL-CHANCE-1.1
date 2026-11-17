@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bg4efg3kihumi"]
+[gd_scene load_steps=11 format=3 uid="uid://bg4efg3kihumi"]
 
 [ext_resource type="Script" uid="uid://plvnjhdey54w" path="res://scripts/player_1_controller.gd" id="1_l2ouc"]
 [ext_resource type="Script" uid="uid://dgpsh071eifvc" path="res://scripts/hurtbox.gd" id="2_h1fbb"]
-[ext_resource type="Script" path="res://scripts/pushbox.gd" id="2_nxdn6"]
+[ext_resource type="Script" uid="uid://df1m6mmdmj1gj" path="res://scripts/pushbox.gd" id="2_nxdn6"]
 [ext_resource type="PackedScene" uid="uid://corempp0w3wf8" path="res://scenes/UI/HealthBar.tscn" id="3_mao05"]
 [ext_resource type="PackedScene" uid="uid://cgsdqaaubn7cb" path="res://scenes/UI/new_soul_meter.tscn" id="5_nxdn6"]
+[ext_resource type="Script" uid="uid://ddjsbkb4quxbc" path="res://scripts/STATES/state_machine.gd" id="6_a1we4"]
+[ext_resource type="Script" uid="uid://dg58bflox1gl" path="res://scripts/STATES/idle.gd" id="7_dycbp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l4xo0"]
 
@@ -67,6 +69,16 @@ position = Vector2(182, 120)
 position = Vector2(466, 516)
 
 [node name="p_2ComboTimer" type="Timer" parent="."]
+
+[node name="state_machine" type="Node" parent="." node_paths=PackedStringArray("starting_state", "parent")]
+script = ExtResource("6_a1we4")
+starting_state = NodePath("idle")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://ddjsbkb4quxbc"
+
+[node name="idle" type="Node" parent="state_machine"]
+script = ExtResource("7_dycbp")
+animation_name = "idle"
 
 [connection signal="body_entered" from="pushbox" to="pushbox" method="_on_body_entered"]
 [connection signal="timeout" from="p_2ComboTimer" to="." method="_on_p_2_combo_timer_timeout"]

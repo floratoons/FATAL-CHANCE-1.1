@@ -66,9 +66,12 @@ var can_special1: bool = false
 var can_special2: bool = false
 var can_special3: bool = false
 
+@onready var state_machine = $state_machine
+
 func _ready() -> void:
 	insert_player_anims()
 	insert_player_stocks()
+	state_machine.init(self)
 	#initialize the health bar 
 	health_bar.init_health(100)
 	soul_meter.value = 0

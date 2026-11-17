@@ -15,3 +15,6 @@ func _init() -> void:
 	if character_name == "Anathema":
 		print("Anathema")
 		pass
+		
+func _input(event):
+	pass
