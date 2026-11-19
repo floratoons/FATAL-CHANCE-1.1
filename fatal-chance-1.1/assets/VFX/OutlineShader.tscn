@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://dihedvf0wlcej"]
+[gd_scene load_steps=15 format=3 uid="uid://dihedvf0wlcej"]
 
 [ext_resource type="Shader" uid="uid://crmq2m4ulvmbw" path="res://assets/VFX/OutlineShader.gdshader" id="1_f2lsg"]
 [ext_resource type="Texture2D" uid="uid://doj452bjkvgvi" path="res://assets/MainFightUI/UpdatedUI/main_slots.png" id="2_oti4n"]
 [ext_resource type="Texture2D" uid="uid://cwbesmqnqqxcy" path="res://assets/MainFightUI/KO.png" id="3_fu4ad"]
-[ext_resource type="Shader" uid="uid://33e33bg3mbwd" path="res://assets/VFX/screen_shader.gdshader" id="4_n0h8b"]
 [ext_resource type="Texture2D" uid="uid://dvrjm77p7stwu" path="res://assets/AnathemaSprites/anathema_anim_A2.png" id="4_obefw"]
 [ext_resource type="Texture2D" uid="uid://cbkq8emd3p1yo" path="res://assets/MapSelectionSprite/Map1.jpg" id="5_5aj30"]
 
@@ -50,7 +49,6 @@ shader_parameter/sample_count = 8
 shader_parameter/inner_outline = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oti4n"]
-shader = ExtResource("4_n0h8b")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_63bcq"]
 shader = ExtResource("1_f2lsg")
@@ -106,7 +104,7 @@ texture = ExtResource("3_fu4ad")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_oti4n")
-position = Vector2(1478.0001, -38.000004)
+position = Vector2(1461.0001, -38.000004)
 scale = Vector2(0.028498419, 0.028498422)
 texture = ExtResource("5_5aj30")
 

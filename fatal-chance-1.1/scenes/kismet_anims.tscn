@@ -131,10 +131,10 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.06666667, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("49_4j42o"), ExtResource("50_4j0vm"), ExtResource("49_4j42o"), ExtResource("51_xdtvh")]
+"values": [ExtResource("50_4j0vm"), ExtResource("49_4j42o"), ExtResource("51_xdtvh")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -143,10 +143,10 @@ tracks/1/path = NodePath(".:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0.03333334, 0.33333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(121.095, 11.41), Vector2(121.095, 11.41)]
+"values": [Vector2(118.385, 11.41), Vector2(118.385, 11.41)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -1095,9 +1095,9 @@ script = ExtResource("3_jyu70")
 metadata/_custom_type_script = "uid://cdra6accyalp7"
 
 [node name="Special" type="CollisionShape2D" parent="FrameDataSpecial1"]
-position = Vector2(266.882, 98.082)
-rotation = 2.0874138
-scale = Vector2(2.047, 2.69)
+position = Vector2(182.66667, 22.666668)
+rotation = 1.5707964
+scale = Vector2(0.6800008, 0.89333254)
 shape = SubResource("CapsuleShape2D_c0av1")
 disabled = true
 
@@ -1109,8 +1109,9 @@ knockup_force = 200
 metadata/_custom_type_script = "uid://cdra6accyalp7"
 
 [node name="A2_whip" type="CollisionShape2D" parent="FrameDataW"]
-position = Vector2(76, 121.99999)
+position = Vector2(189.915, -38.73)
 rotation = 1.5707964
+scale = Vector2(1, 3.27)
 shape = SubResource("CapsuleShape2D_pxgxb")
 disabled = true
 debug_color = Color(3.946722e-06, 0.6032858, 0.6826914, 0.41960785)
