@@ -52,11 +52,12 @@ S: Crouch/Block
 
 J: Attack 1
 K: Attack 2
+L: (Kismet Form Change)
 
-S and J: Roll Slots
-J and K: BLUE
-K and L: YELLOW
-J and L: RED"
+E: Roll Slots
+L: Special 
+(Consecutive Colored Slots
+Increase DMG)"
 horizontal_alignment = 1
 
 [node name="Player 2" type="Label" parent="."]
@@ -75,19 +76,18 @@ offset_top = 111.0
 offset_right = 321.0
 offset_bottom = 732.0
 theme_override_font_sizes/font_size = 24
-text = "Left & Right Arrows: 
-Move
+text = "Left & Right Arrows:  Move
 Up Arrow: Jump
 Down Arrow: Crouch/Block
 
 Num Pad 1: Attack 1
 Num Pad 2: Attack 2
+Num Pad 3: (Kismet Form Change)
 
-Down Arrow and Num Pad 1: 
-Roll Slots
-Num 1 and Num 2: BLUE
-Num 2 and Num 3: YELLOW
-Num 1 and Num 3: RED"
+Num Pad DEL: Roll Slots
+Num Pad 3: Special 
+(Consecutive Colored Slots
+Increase DMG)"
 horizontal_alignment = 1
 
 [node name="Rolls" type="Label" parent="."]
