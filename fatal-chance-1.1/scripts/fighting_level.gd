@@ -122,10 +122,18 @@ func look_at_enemy():
 		p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameData2").scale.x = -1
 		p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataSpecial1").scale.x = 1
 		p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataSpecial1").scale.x = -1
-		p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataSpecial2").scale.x = 1
-		p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataSpecial2").scale.x = -1
-		p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataSpecial3").scale.x = 1
-		p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataSpecial3").scale.x = -1
+		if GlobalData.p1_character == "Kismet":
+			p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataW").scale.x = 1
+			p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataW2").scale.x = 1
+			p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataW3").scale.x = 1
+		if GlobalData.p2_character == "Kismet":
+			p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataW").scale.x = -1
+			p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataW2").scale.x = -1
+			p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataW3").scale.x = -1
+		#p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataSpecial2").scale.x = 1
+		#p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataSpecial2").scale.x = -1
+		#p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataSpecial3").scale.x = 1
+		#p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataSpecial3").scale.x = -1
 	else:
 		p_2.get_node("player2_LOADEDANIMS/Sprite2D").flip_h = false
 		p_1.get_node("player1_LOADEDANIMS/Sprite2D").flip_h = true
@@ -137,10 +145,18 @@ func look_at_enemy():
 		p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameData2").scale.x = 1
 		p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataSpecial1").scale.x = -1
 		p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataSpecial1").scale.x = 1
-		p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataSpecial2").scale.x = -1
-		p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataSpecial2").scale.x = 1
-		p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataSpecial3").scale.x = -1
-		p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataSpecial3").scale.x = 1
+		if GlobalData.p1_character == "Kismet":
+			p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataW").scale.x = -1
+			p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataW2").scale.x = -1
+			p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataW3").scale.x = -1
+		if GlobalData.p2_character == "Kismet":
+			p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataW").scale.x = 1
+			p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataW2").scale.x = 1
+			p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataW3").scale.x = 1
+		#p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataSpecial2").scale.x = -1
+		#p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataSpecial2").scale.x = 1
+		#p_1.get_node("player1_LOADEDANIMS/Sprite2D/FrameDataSpecial3").scale.x = -1
+		#p_2.get_node("player2_LOADEDANIMS/Sprite2D/FrameDataSpecial3").scale.x = 1
 	
 func load_players():
 	player1_instance = load_player1.instantiate()

@@ -5,6 +5,8 @@ var anathema = preload("res://scenes/anathema_anims.tscn")
 var talisman = preload("res://scenes/talisman_anims.tscn")
 var kismet = preload("res://scenes/kismet_anims.tscn")
 
+var kismet_form = false
+
 var animation_player
 var special_damage
 var special_attack
@@ -116,7 +118,10 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if not moving and not attacking and not jumping and is_on_floor():
-		animation_player.play("idle")
+		if GlobalData.p2_character == "Kismet" and kismet_form == true:
+			animation_player.play("idle_whip")
+		else:
+			animation_player.play("idle")
 
 	if not moving and not attacking and not jumping and can_crouch and Input.is_action_pressed("crouch_p2"):
 		crouch()
@@ -124,17 +129,40 @@ func _physics_process(delta: float) -> void:
 
 	dash()
 
+	if GlobalData.p2_character == "Kismet":
+		if Input.is_action_just_pressed("C_p2") and not jumping and kismet_form == true and can_special1 == false:
+			attacking = true
+			animation_player.play("StanceSwitch2") 
+			kismet_form = false
+		elif Input.is_action_just_pressed("C_p2") and not jumping and kismet_form == false and can_special1 == false:
+			attacking = true
+			animation_player.play("StanceSwitch1") 
+			kismet_form = true
+			attack_timer(.75)
+
 #attack inputs
 	if Input.is_action_just_pressed("A_p2") and not jumping and can_attack1 and not attacking:
 		#maybe make an attacking timer for all attacks (recovery time)
-		attacking = true
-		animation_player.play("A1")
-		attack_timer(0.75)
+		if GlobalData.p2_character == "Kismet" and kismet_form == true:
+			attacking = true
+			print("A1WHIP")
+			animation_player.play("A1_whip")
+			attack_timer(0.75)
+		else:
+			attacking = true
+			animation_player.play("A1")
+			attack_timer(0.75)
 
 	if Input.is_action_just_pressed("B_p2") and not jumping and can_attack2 and not attacking:
-		attacking = true
-		animation_player.play("B1")
-		attack_timer(.45)
+		if GlobalData.p2_character == "Kismet" and kismet_form == true:
+			attacking = true
+			print("B1WHIP")
+			animation_player.play("B1_whip")
+			attack_timer(0.75)
+		else:
+			attacking = true
+			animation_player.play("B1")
+			attack_timer(.45)
 
 	if can_special1 and Input.is_action_pressed("C_p2") and not attacking:
 		animation_player.play("RESET")
@@ -144,12 +172,12 @@ func _physics_process(delta: float) -> void:
 	if can_special2 and Input.is_action_pressed("C_p2") and not attacking:
 		animation_player.play("RESET")
 		attacking = true
-		animation_player.play("S2")
+		animation_player.play("S1")
 
 	if can_special3 and Input.is_action_pressed("C_p2") and not attacking:
 		animation_player.play("RESET")
 		attacking = true
-		animation_player.play("S3")
+		animation_player.play("S1")
 
 	roll_slots()
 	
@@ -177,7 +205,10 @@ func _physics_process(delta: float) -> void:
 			print(velocity.x)
 		velocity.y = JUMP_VELOCITY
 		#can_dash = true
-		animation_player.play("jump")
+		if GlobalData.p2_character == "Kismet" and kismet_form == true:
+			animation_player.play("jump_whip")
+		else:
+			animation_player.play("jump")
 	if direction and is_on_floor():
 		if dashing:
 			velocity.x = direction * DASH_SPEED
@@ -192,7 +223,10 @@ func _physics_process(delta: float) -> void:
 				print(knockback_force)
 				damaged = false
 			if not attacking and not jumping and moving and is_on_floor():
-				animation_player.play("walk")
+				if GlobalData.p2_character == "Kismet" and kismet_form == true:
+					animation_player.play("walk_whip")
+				else:
+					animation_player.play("walk")
 	elif is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		moving = false
@@ -307,17 +341,27 @@ func special_attack_assign():
 		print(can_special1)
 		$player2_LOADEDANIMS/Sprite2D/FrameDataSpecial1.damage = special_damage
 	if special_attack == 1:
-		can_special2 = true
-		print("canS2")
-		Log.print("can special 2")
-		print(can_special2)
-		$player2_LOADEDANIMS/Sprite2D/FrameDataSpecial2.damage = special_damage
+		#can_special2 = true
+		#print("canS2")
+		#Log.print("can special 2")
+		#print(can_special2)
+		#$player2_LOADEDANIMS/Sprite2D/FrameDataSpecial2.damage = special_damage
+		can_special1 = true
+		print("canS1")
+		Log.print("can special 1")
+		print(can_special1)
+		$player2_LOADEDANIMS/Sprite2D/FrameDataSpecial1.damage = special_damage
 	if special_attack == 2:
-		can_special3 = true
-		print("canS3")
-		Log.print("can special 3")
-		print(can_special3)
-		$player2_LOADEDANIMS/Sprite2D/FrameDataSpecial3.damage = special_damage
+		#can_special3 = true
+		#print("canS3")
+		#Log.print("can special 3")
+		#print(can_special3)
+		#$player2_LOADEDANIMS/Sprite2D/FrameDataSpecial3.damage = special_damage
+		can_special1 = true
+		print("canS1")
+		Log.print("can special 1")
+		print(can_special1)
+		$player2_LOADEDANIMS/Sprite2D/FrameDataSpecial1.damage = special_damage
 
 func insert_player_anims():
 	if GlobalData.p2_character == "Anathema":
@@ -350,8 +394,11 @@ func insert_player_anims():
 		kismet_instance.get_node("FrameData").collision_layer = 2
 		kismet_instance.get_node("FrameData2").collision_layer = 2
 		kismet_instance.get_node("FrameDataSpecial1").collision_layer = 2
-		kismet_instance.get_node("FrameDataSpecial2").collision_layer = 2
-		kismet_instance.get_node("FrameDataSpecial3").collision_layer = 2
+		#kismet_instance.get_node("FrameDataSpecial2").collision_layer = 2
+		#kismet_instance.get_node("FrameDataSpecial3").collision_layer = 2
+		kismet_instance.get_node("FrameDataW").collision_layer = 2
+		kismet_instance.get_node("FrameDataW2").collision_layer = 2
+		kismet_instance.get_node("FrameDataW3").collision_layer = 2
 		get_node("Hurtbox").collision_mask = 4
 
 func insert_player_stocks():
@@ -434,6 +481,14 @@ func anim_done(name: String):
 		attacking = false
 	if name == "B1":
 		attacking = false
+	if name == "StanceSwitch1":
+		attacking = false
+	if name == "StanceSwitch2":
+		attacking = false
+	if name == "A1_whip":
+		attacking = false
+	if name == "B1_whip":
+		attacking = false
 	if name == "S1":
 		attacking = false
 		can_special1 = false
@@ -446,6 +501,8 @@ func anim_done(name: String):
 		attacking = false
 		can_special3 = false
 		$player2_LOADEDANIMS/Sprite2D/FrameDataSpecial3.damage = 0
+	if name == "jump_whip":
+		jumping = false
 	elif name == "jump":
 		jumping = false
 
