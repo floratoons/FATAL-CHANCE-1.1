@@ -2,6 +2,7 @@ extends Control
 
 @onready var meter = $MeterTexture
 var can_deplete = false
+var is_depleting = false
 var deplete_amt = 6.5
 @onready var timer = $Timer
 #@onready var timer_amt = $Timer.wait_time
@@ -29,6 +30,7 @@ func _process(delta: float) -> void:
 	
 	#this function here is for the sake of testing - change or take out if input will be controlled through the player script
 	if Input.is_action_just_pressed("C_p1"):
+		timer.start()
 		meter_active()
 			#if timer.wait_time > 0:
 				#value -= deplete_amt
@@ -38,7 +40,9 @@ func _process(delta: float) -> void:
 	
 func meter_active():
 	if can_deplete == true:
-		timer.start()
+		#need to figure out how to make the meter deplete per second; possibly would need another timer but hopefully no. 
+		#the math below has to happen every second while the timer is running
+		#meter.value -= deplete_amt
 		print(timer.wait_time)
 	pass
 
@@ -47,7 +51,3 @@ func _on_timer_timeout() -> void:
 	timer.stop()
 	print("timer ended, meter depleted")
 	pass # Replace with function body.
-	
-
-	
-	#for whatever reason, the texture isn't updating to reflect the meter reaching zero

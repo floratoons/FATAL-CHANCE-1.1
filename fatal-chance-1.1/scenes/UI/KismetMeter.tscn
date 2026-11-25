@@ -18,7 +18,7 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 1.0
 offset_bottom = 1.0
-value = 66.0
+value = 65.0
 texture_over = ExtResource("1_byxhe")
 texture_progress = ExtResource("2_hocg3")
 
