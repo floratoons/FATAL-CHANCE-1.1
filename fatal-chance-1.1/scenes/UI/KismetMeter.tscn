@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ylpwaxspny63"]
+
+[ext_resource type="Script" uid="uid://djmurera52vmp" path="res://scenes/UI/kismet_meter.gd" id="1_8pcq4"]
+[ext_resource type="Texture2D" uid="uid://cpmjtcm68ooxf" path="res://assets/MainFightUI/UpdatedUI/kismet_meter_basic.png" id="1_byxhe"]
+[ext_resource type="Texture2D" uid="uid://dacrdt6p1o8pj" path="res://assets/MainFightUI/UpdatedUI/kismet_simple_fill.png" id="2_hocg3"]
+
+[node name="KismetMeter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8pcq4")
+
+[node name="MeterTexture" type="TextureProgressBar" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+value = 66.0
+texture_over = ExtResource("1_byxhe")
+texture_progress = ExtResource("2_hocg3")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

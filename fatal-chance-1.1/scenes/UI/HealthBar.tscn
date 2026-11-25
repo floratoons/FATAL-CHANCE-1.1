@@ -18,6 +18,7 @@ bg_color = Color(1, 1, 1, 1)
 
 [node name="HealthBar" type="TextureProgressBar"]
 z_index = 1
+texture_filter = 1
 offset_right = 328.0
 offset_bottom = 33.0
 size_flags_horizontal = 0
