@@ -30,7 +30,6 @@ func _process(delta: float) -> void:
 	
 	#this function here is for the sake of testing - change or take out if input will be controlled through the player script
 	if Input.is_action_just_pressed("C_p1"):
-		timer.start()
 		meter_active()
 			#if timer.wait_time > 0:
 				#value -= deplete_amt
@@ -40,9 +39,14 @@ func _process(delta: float) -> void:
 	
 func meter_active():
 	if can_deplete == true:
+		
 		#need to figure out how to make the meter deplete per second; possibly would need another timer but hopefully no. 
 		#the math below has to happen every second while the timer is running
 		#meter.value -= deplete_amt
+		#or
+		#var tween = get_tree().create_tween()
+		#tween.tween_property(self, meter.value, 0, timer.wait_time)
+		#the tween should techincally be a better solution but it is not working currently;
 		print(timer.wait_time)
 	pass
 
